@@ -11,5 +11,6 @@
   },
   "author": "Sharptop Co",
   "license": "proprietary",
+  "private": true,
   "homepage": "https://bitbucket.org/sharptop/aurelia-ui-components#readme"
 }
