@@ -1,0 +1,15 @@
+{
+  "name": "aurelia-ui-components",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/sharptop/aurelia-ui-components.git"
+  },
+  "author": "Sharptop Co",
+  "license": "proprietary",
+  "homepage": "https://bitbucket.org/sharptop/aurelia-ui-components#readme"
+}

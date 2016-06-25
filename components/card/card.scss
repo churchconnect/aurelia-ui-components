@@ -1,0 +1,17 @@
+.card {
+    font-size: 1rem;
+}
+
+.card-header {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+
+    h2 {
+        font-size: em(16px);
+        margin: 0 0 em(5px) 0;
+    }
+
+    small {
+        font-size: em(12px);
+    }
+}

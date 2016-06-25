@@ -1,0 +1,57 @@
+/* application variables */
+$palettes: (
+    primary: (
+        lighter: #0982ff,
+        light: #2585c6,
+        base: #255a72
+    ),
+
+    neutral: (
+        lightest: #ffffff,
+        lighter: #f8f8f8,
+        light: #e6e6e6,
+        base: #b5b5b5,
+        dark: #a7a7a7,
+        darker: #728190,
+        darkest: #555555
+    ),
+
+    message: (
+        success: #0fa212,
+        error: #ff0344,
+        warning: #f79b2d
+    )
+) !default;
+
+$base-bg-color: color(neutral, light) !default;
+$base-font-color: color(neutral, darkest) !default;
+$action-color: color(primary, base) !default;
+
+$base-font-family: 'VerelaRound' !default;
+$base-line-height: 1.5 !default;
+
+$base-font-size: 16px !default;
+$x-small-font-size: $base-font-size * .625 !default;     // 10px
+$small-font-size: $base-font-size * .75 !default;        // 12px
+$medium-font-size: $base-font-size * .875 !default;      // 14px
+$large-font-size: $base-font-size * 1.25 !default;       // 20px
+$x-large-font-size: $base-font-size * 2.75 !default;     // 44px
+
+$base-spacing: 20px !default;
+$x-small-spacing: $base-spacing * .25 !default;          // 5px
+$small-spacing: $base-spacing * .6 !default;             // 12px
+$medium-spacing: $base-spacing * .75 !default;           // 15px
+$large-spacing: $base-spacing * 1.4 !default;            // 28px
+$x-large-spacing: $base-spacing * 1.7 !default;          // 34px
+
+$base-border-radius: 8px !default;
+
+$base-duration: 150ms !default;
+$base-timing: ease !default;
+
+$base-border-color: color(neutral, base) !default;
+$base-border: 1px solid $base-border-color !default;
+$secondary-bg-color: tint($base-border-color, 75%) !default;
+
+$heading-font-family: $base-font-family !default;
+$heading-line-height: 1.2 !default;
