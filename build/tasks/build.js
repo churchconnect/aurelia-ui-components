@@ -17,10 +17,7 @@ gulp.task('build-html', function () {
 gulp.task('build-scss', function () {
   return gulp.src([paths.themeSCSS, paths.componentSCSS])
     .pipe(concat('components.scss'))
-    .pipe(gulp.dest(paths.output + 'es2015'))
-    .pipe(gulp.dest(paths.output + 'commonjs'))
-    .pipe(gulp.dest(paths.output + 'amd'))
-    .pipe(gulp.dest(paths.output + 'system'));
+    .pipe(gulp.dest(paths.output));
 });
 
 gulp.task('build-es2015', function () {
