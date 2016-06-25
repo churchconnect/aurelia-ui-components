@@ -51,7 +51,6 @@ $base-timing: ease !default;
 
 $base-border-color: color(neutral, base) !default;
 $base-border: 1px solid $base-border-color !default;
-$secondary-bg-color: tint($base-border-color, 75%) !default;
 
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
