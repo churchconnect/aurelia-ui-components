@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -48,15 +48,44 @@ import { inlineView, bindable, containerless } from 'aurelia-framework';
 export let CardInputAmount = (_dec = containerless(), _dec2 = inlineView(`
 <template>
     <div class="card-input card-input__amount">
-        <input type="number" min="1" max="999999" value.bind="amount">
+        <span class="input-mask" contenteditable="true" onkeypress="return this.innerText.length <= 3" textcontent.bind="inputAmount" blur.trigger="setAmount()"></span>
+        <input type="number" min="1" max="999" size="1" value.bind="amount">
     </div>
 </template>
 `), _dec(_class = _dec2(_class = (_class2 = class CardInputAmount {
+
     constructor() {
         _initDefineProp(this, 'amount', _descriptor, this);
+
+        _initDefineProp(this, 'inputAmount', _descriptor2, this);
+
+        this.inputAmount = this.amount;
+    }
+
+    setAmount() {
+        if (!this.isValidAmount(this.inputAmount)) this.inputAmount = 0;
+
+        this.amount = this.inputAmount;
+    }
+
+    resetInputAmount() {
+        this.inputAmount = '';
+    }
+
+    isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    isValidAmount(amount) {
+        return this.inputAmount && this.isNumeric(this.inputAmount);
     }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'amount', [bindable], {
+    enumerable: true,
+    initializer: function () {
+        return 0;
+    }
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'inputAmount', [bindable], {
     enumerable: true,
     initializer: function () {
         return '';

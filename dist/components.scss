@@ -89,11 +89,16 @@ $card-horizontal-spacing: em($large-spacing);
 $card-vertical-spacing: em($large-spacing);
 
 .card {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+
     font-size: 1rem;
     padding: $card-vertical-spacing $card-horizontal-spacing;
 
     p {
         font-size: em($medium-font-size);
+        width: 100%;
     }
 }
 
@@ -105,6 +110,7 @@ $card-vertical-spacing: em($large-spacing);
     margin: 0 0 em($large-spacing) 0;
     min-height: 0;
     padding: 0;
+    width: 100%;
 
     &:after {
         display: none;
@@ -127,7 +133,6 @@ $card-vertical-spacing: em($large-spacing);
     &.full-width {
         @include calc(width, "100% + #{$card-horizontal-spacing} * 2");
 
-        margin-left: -($card-horizontal-spacing);
         position: relative;
     }
 
@@ -142,6 +147,7 @@ $card-vertical-spacing: em($large-spacing);
     @include justify-content(space-around);
 
     margin-top: em($base-spacing);
+    width: 100%;
 }
 
 .card-actions {
@@ -150,6 +156,7 @@ $card-vertical-spacing: em($large-spacing);
     @include justify-content(center);
 
     margin-top: em($large-spacing);
+    width: 100%;
 
     button {
         @include flex(1);
@@ -164,4 +171,35 @@ $card-vertical-spacing: em($large-spacing);
 
 .card-input {
     @include display(flex);
+    @include justify-content(center);
+
+    width: 100%;
+
+    .input-mask {
+        border-bottom: 2px solid color(neutral, light);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: em($x-large-font-size);
+        font-weight: 300;
+        outline: none;
+        position: relative;
+        text-align: center;
+        transition: border $base-duration $base-timing;
+
+        &:focus {
+            border-color: color(neutral, base);
+        }
+
+        &:before {
+            color: color(neutral, dark);
+            content: '$';
+            font-size: em($large-font-size, $x-large-font-size);
+            position: absolute;
+            top: 0;
+            left: em(-14px, $large-font-size);
+        }
+
+        & + input {
+            display: none;
+        }
+    }
 }

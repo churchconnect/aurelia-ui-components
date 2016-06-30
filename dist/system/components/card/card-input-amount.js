@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, CardInputAmount;
+    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, CardInputAmount;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -61,11 +61,42 @@ System.register(['aurelia-framework'], function (_export, _context) {
             containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
-            _export('CardInputAmount', CardInputAmount = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card-input card-input__amount">\n        <input type="number" min="1" max="999999" value.bind="amount">\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function CardInputAmount() {
-                _classCallCheck(this, CardInputAmount);
+            _export('CardInputAmount', CardInputAmount = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card-input card-input__amount">\n        <span class="input-mask" contenteditable="true" onkeypress="return this.innerText.length <= 3" textcontent.bind="inputAmount" blur.trigger="setAmount()"></span>\n        <input type="number" min="1" max="999" size="1" value.bind="amount">\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+                function CardInputAmount() {
+                    _classCallCheck(this, CardInputAmount);
 
-                _initDefineProp(this, 'amount', _descriptor, this);
-            }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'amount', [bindable], {
+                    _initDefineProp(this, 'amount', _descriptor, this);
+
+                    _initDefineProp(this, 'inputAmount', _descriptor2, this);
+
+                    this.inputAmount = this.amount;
+                }
+
+                CardInputAmount.prototype.setAmount = function setAmount() {
+                    if (!this.isValidAmount(this.inputAmount)) this.inputAmount = 0;
+
+                    this.amount = this.inputAmount;
+                };
+
+                CardInputAmount.prototype.resetInputAmount = function resetInputAmount() {
+                    this.inputAmount = '';
+                };
+
+                CardInputAmount.prototype.isNumeric = function isNumeric(n) {
+                    return !isNaN(parseFloat(n)) && isFinite(n);
+                };
+
+                CardInputAmount.prototype.isValidAmount = function isValidAmount(amount) {
+                    return this.inputAmount && this.isNumeric(this.inputAmount);
+                };
+
+                return CardInputAmount;
+            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'amount', [bindable], {
+                enumerable: true,
+                initializer: function initializer() {
+                    return 0;
+                }
+            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'inputAmount', [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return '';
