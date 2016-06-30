@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./card', './card-header'], function (_export, _context) {
+System.register(['./card', './card-header', './card-image', './card-links'], function (_export, _context) {
   "use strict";
 
   return {
@@ -20,6 +20,22 @@ System.register(['./card', './card-header'], function (_export, _context) {
       }
 
       _export(_exportObj2);
+    }, function (_cardImage) {
+      var _exportObj3 = {};
+
+      for (var _key3 in _cardImage) {
+        if (_key3 !== "default") _exportObj3[_key3] = _cardImage[_key3];
+      }
+
+      _export(_exportObj3);
+    }, function (_cardLinks) {
+      var _exportObj4 = {};
+
+      for (var _key4 in _cardLinks) {
+        if (_key4 !== "default") _exportObj4[_key4] = _cardLinks[_key4];
+      }
+
+      _export(_exportObj4);
     }],
     execute: function () {}
   };

@@ -1,3 +1,17 @@
+@function color($palette, $tone: 'base') {
+    @if map-has-key($palettes, $palette) {
+        @if map-has-key(map-get($palettes, $palette), $tone) {
+            @return map-get(map-get($palettes, $palette), $tone);
+        }
+
+        @warn "Unknown `#{$tone}` in palette: `#{$palette}`.";
+        @return null;
+    }
+
+    @warn "Unknown `#{$palette}` in palettes.";
+    @return null;
+}
+
 /* application variables */
 $palettes: (
     primary: (
@@ -55,29 +69,30 @@ $base-border: 1px solid $base-border-color !default;
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
 
-@font-face {
-    font-family: 'OpenSans';
-    src: url('../fonts/opensans-bold-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'VerelaRound';
-    src: url('../fonts/varelaround-regular-webfont.woff2') format('woff2'),
-         url('../fonts/varelaround-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+$card-horizontal-spacing: em($large-spacing);
+$card-vertical-spacing: em($large-spacing);
 
 .card {
     font-size: 1rem;
+    padding: $card-vertical-spacing $card-horizontal-spacing;
+
+    p {
+        font-size: em(14px);
+    }
 }
 
 .card-header {
     @include flex-direction(column);
     @include align-items(flex-start);
+
+    font-size: 1em;
+    margin: 0 0 em($large-spacing) 0;
+    min-height: 0;
+    padding: 0;
+
+    &:after {
+        display: none;
+    }
 
     h2 {
         font-size: em(16px);
@@ -85,6 +100,30 @@ $heading-line-height: 1.2 !default;
     }
 
     small {
+        color: color(neutral, base);
         font-size: em(12px);
     }
+}
+
+.card-image {
+    width: 100%;
+
+    &.full-width {
+        @include calc(width, "100% + #{$card-horizontal-spacing} * 2");
+
+        margin-left: -($card-horizontal-spacing);
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.card-links {
+    @include display(flex);
+    @include justify-content(space-around);
+
+    margin-top: em($base-spacing);
 }

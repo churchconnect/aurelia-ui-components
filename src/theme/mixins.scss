@@ -1,0 +1,13 @@
+@function color($palette, $tone: 'base') {
+    @if map-has-key($palettes, $palette) {
+        @if map-has-key(map-get($palettes, $palette), $tone) {
+            @return map-get(map-get($palettes, $palette), $tone);
+        }
+
+        @warn "Unknown `#{$tone}` in palette: `#{$palette}`.";
+        @return null;
+    }
+
+    @warn "Unknown `#{$palette}` in palettes.";
+    @return null;
+}
