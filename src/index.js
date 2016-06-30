@@ -1,6 +1,7 @@
 let components = {
     card: [
-        './components/card/index'
+        './components/card/index',
+        './components/button/index',
     ]
 }
 

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.configure = configure;
 var components = {
-    card: ['./components/card/index']
+    card: ['./components/card/index', './components/button/index']
 };
 
 function configure(config) {

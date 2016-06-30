@@ -58,7 +58,7 @@ $medium-spacing: $base-spacing * .75 !default;           // 15px
 $large-spacing: $base-spacing * 1.4 !default;            // 28px
 $x-large-spacing: $base-spacing * 1.7 !default;          // 34px
 
-$base-border-radius: 8px !default;
+$base-border-radius: 20px !default;
 
 $base-duration: 150ms !default;
 $base-timing: ease !default;
@@ -69,6 +69,22 @@ $base-border: 1px solid $base-border-color !default;
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
 
+button {
+    background: color(primary, base);
+    border: none;
+    border-radius: $base-border-radius;
+    color: color(neutral, lightest);
+    cursor: pointer;
+    font-size: em($medium-font-size);
+    outline: none;
+    padding: em($small-spacing) 0;
+    text-transform: uppercase;
+
+    &:active {
+        background: darken(color(primary, base), 10%);
+    }
+}
+
 $card-horizontal-spacing: em($large-spacing);
 $card-vertical-spacing: em($large-spacing);
 
@@ -77,7 +93,7 @@ $card-vertical-spacing: em($large-spacing);
     padding: $card-vertical-spacing $card-horizontal-spacing;
 
     p {
-        font-size: em(14px);
+        font-size: em($medium-font-size);
     }
 }
 
@@ -95,13 +111,13 @@ $card-vertical-spacing: em($large-spacing);
     }
 
     h2 {
-        font-size: em(16px);
-        margin: 0 0 em(5px) 0;
+        font-size: em($base-font-size);
+        margin: 0 0 em($x-small-spacing) 0;
     }
 
     small {
         color: color(neutral, base);
-        font-size: em(12px);
+        font-size: em($small-font-size);
     }
 }
 
@@ -126,4 +142,26 @@ $card-vertical-spacing: em($large-spacing);
     @include justify-content(space-around);
 
     margin-top: em($base-spacing);
+}
+
+.card-actions {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
+    margin-top: em($large-spacing);
+
+    button {
+        @include flex(1);
+
+        margin-right: em($small-spacing);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.card-input {
+    @include display(flex);
 }

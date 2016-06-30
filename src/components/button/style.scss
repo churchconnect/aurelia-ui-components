@@ -1,0 +1,15 @@
+button {
+    background: color(primary, base);
+    border: none;
+    border-radius: $base-border-radius;
+    color: color(neutral, lightest);
+    cursor: pointer;
+    font-size: em($medium-font-size);
+    outline: none;
+    padding: em($small-spacing) 0;
+    text-transform: uppercase;
+
+    &:active {
+        background: darken(color(primary, base), 10%);
+    }
+}

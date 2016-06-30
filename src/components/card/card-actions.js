@@ -3,9 +3,9 @@ import {inlineView, containerless} from 'aurelia-framework'
 @containerless()
 @inlineView(`
 <template>
-    <div class="card-links">
+    <div class="card-actions">
         <slot></slot>
     </div>
 </template>
 `)
-export class CardLinks {}
+export class CardActions {}

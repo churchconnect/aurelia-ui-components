@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, containerless, _dec, _dec2, _class, CardLinks;
+    var inlineView, containerless, _dec, _dec2, _class, CardActions;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -17,11 +17,11 @@ System.register(['aurelia-framework'], function (_export, _context) {
             containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
-            _export('CardLinks', CardLinks = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card-links">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = function CardLinks() {
-                _classCallCheck(this, CardLinks);
+            _export('CardActions', CardActions = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card-actions">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = function CardActions() {
+                _classCallCheck(this, CardActions);
             }) || _class) || _class));
 
-            _export('CardLinks', CardLinks);
+            _export('CardActions', CardActions);
         }
     };
 });

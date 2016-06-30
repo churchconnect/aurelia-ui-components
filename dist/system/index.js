@@ -8,7 +8,7 @@ System.register([], function (_export, _context) {
         setters: [],
         execute: function () {
             components = {
-                card: ['./components/card/index']
+                card: ['./components/card/index', './components/button/index']
             };
             function configure(config) {
                 var includes = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];

@@ -1,4 +1,4 @@
-import {inlineView, bindable, containerless} from 'aurelia-framework'
+import {inlineView, containerless} from 'aurelia-framework'
 
 @containerless()
 @inlineView(`

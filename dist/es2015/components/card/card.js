@@ -1,6 +1,6 @@
 var _dec, _dec2, _class;
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+import { inlineView, containerless } from 'aurelia-framework';
 
 export let Card = (_dec = containerless(), _dec2 = inlineView(`
 <template>

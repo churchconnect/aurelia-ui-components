@@ -1,5 +1,5 @@
 let components = {
-    card: ['./components/card/index']
+    card: ['./components/card/index', './components/button/index']
 };
 
 export function configure(config, includes = []) {

@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, Card;
+    var inlineView, containerless, _dec, _dec2, _class, Card;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -14,7 +14,6 @@ System.register(['aurelia-framework'], function (_export, _context) {
     return {
         setters: [function (_aureliaFramework) {
             inlineView = _aureliaFramework.inlineView;
-            bindable = _aureliaFramework.bindable;
             containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
