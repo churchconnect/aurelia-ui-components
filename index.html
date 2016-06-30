@@ -3,103 +3,102 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <title>
-        Aurelia UI Components
-    </title>
+    <title>Aurelia UI Components</title>
 
-    <link rel="stylesheet" href="doc/style.css">
+    <link href="doc/assets/ionic-docs.css" rel="stylesheet">
+    <link href="doc/assets/style.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
-<body>
-    <header class="masthead">
+<body class="docs device-preview-page docs-page docs-css">
+    <div class="header horizontal-gradient">
         <div class="container">
-            <a href="/" class="masthead-logo">
-                <span class="mega-octicon octicon-package"></span> Aurelia UI Components
-            </a>
-
-            <nav class="masthead-nav">
-                <a class="active" href="/scaffolding">Docs</a>
-
-                <!--
-                <a href="/about">About</a>
-                <a href="https://github.com/primer/primer" target="_blank">GitHub</a>
-                <a href="https://github.com/primer/primer/blob/master/README.md#install" target="_blank">Install</a>
-                -->
-            </nav>
+            <img src="doc/assets/images/logo.png" class="main-logo">
+            <h4>Aurelia UI Components</h4>
         </div>
-    </header>
-
-
-
-    <div class="container">
-        <div class="columns docs-layout">
-            <div class="one-fourth column">
-                <nav class="menu docs-menu">
-                    <a class="menu-item selected" href="/scaffolding/">Scaffolding</a>
-                </nav>
-
-                <nav class="menu docs-menu">
-                    <a class="menu-item " href="/colors/">Colors</a>
-                </nav>
-            </div>
-
-            <div class="three-fourths column markdown-body">
-                <h1 class="page-title">Buttons</h1>
-
-                <div class="markdown-body">
-                    <p>Buttons are used for <strong>actions</strong>, like in forms, while textual hyperlinks are used for <strong>destinations</strong>, or moving from one page to another.</p>
-
-                    <h2 id="contents">Contents</h2>
-
-                    <ul id="markdown-toc">
-                        <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
-                        <li><a href="#default-buttons" id="markdown-toc-default-buttons">Default buttons</a></li>
-                    </ul>
-
-                    <h2 id="default-buttons">Default buttons</h2>
-
-                    <p>Use the standard—yet classy—<code class="highlighter-rouge">.btn</code> for form actions and primary page actions. These are used extensively around the site.</p>
-
-                    <p>When using a <code class="highlighter-rouge">&lt;button&gt;</code> element, <strong>always specify a <code class="highlighter-rouge">type</code></strong>. When using a <code class="highlighter-rouge">&lt;a&gt;</code> element, <strong>always add <code class="highlighter-rouge">role="button"</code> for accessibility</strong>.</p>
-
-                    <div class="docs-example clearfix"><button class="btn" type="button">Button button</button>
-                        <a class="btn" href="#" role="button">Link button</a></div>
-                    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Link button<span class="nt">&lt;/a&gt;</span></code></pre></div>
-
-                    <p>You can find them in two sizes: the default <code class="highlighter-rouge">.btn</code> and the smaller <code class="highlighter-rouge">.btn-sm</code>.</p>
-
-                    <div class="docs-example clearfix"><button class="btn" type="button">Button</button>
-                        <button class="btn btn-sm" type="button">Small button</button></div>
-                    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-sm"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Small button<span class="nt">&lt;/button&gt;</span></code></pre></div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="footer">
-            Sharptop Co.
-        </footer>
     </div>
 
-    <!--
-    <script src="/js/anchor.min.js"></script>
-    <script>
-        var selector = '.markdown-body > h2, .markdown-body > h3';
-        anchors.options = {
-            placement: 'left',
-            class: 'anchor-link'
-        };
-        anchors.add(selector);
-    </script>
-    -->
+    <div class="container content-container" ng-app="devicePreview">
+        <div class="row">
+            <div class="col-md-2 col-sm-3 aside-menu">
+                <div class="docked-menu">
+                    <ul class="nav left-menu active-menu">
+                        <li class="menu-title">
+                            <a href="/docs/components/">CSS Components</a>
+                        </li>
+
+                        <li>
+                            <a href="#cards">Cards</a>
+                            <ul>
+                                <li>
+                                    <a href="#card">Card</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-sm-9 main-content">
+                <div class="device-preview ionic">
+                    <div class="screen-bg"></div>
+                    <div class="default-screen ionic-body active-preview">
+                        <div class="content-wrapper">
+                            <div class="content padding has-header"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- cards -->
+                <section class="docs-section active" id="cards">
+                    <h3 class="title"><a href="#cards">Cards</a></h3>
+
+                    <p>Here's a blurb about cards</p>
+
+                    <figure class="highlight">
+                        <pre>
+                            <code class="language-html" data-lang="html">
+                                <span>content in here</span>
+                            </code>
+                        </pre>
+                    </figure>
+
+                    <div class="doc-example ionic">
+                        <div class="bar bar-header">
+                            <div class="h1 title">Buttons</div>
+                        </div>
+
+                        <div class="content has-header padding">
+                            <p><button class="button button-light">button-light</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="copy">
+            <div class="copy-container">
+                <p class="authors">
+                    Modified from <a href="http://ionicframework.com/docs">Ionic Framework</a><span>|</span>
+                    <a href="http://sharptop.co">Sharptop Co</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="doc/assets/scripts.js"></script>
+    <script src="doc/assets/site.js"></script>
 </body>
 
 </html>

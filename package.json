@@ -12,7 +12,8 @@
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js build",
     "watch": "node_modules/gulp/bin/gulp.js watch",
-    "release": "node_modules/gulp/bin/gulp.js prepare-release"
+    "release": "node_modules/gulp/bin/gulp.js prepare-release",
+    "start": "node server.js"
   },
   "devDependencies": {
     "aurelia-tools": "^0.2.3",
@@ -63,5 +64,10 @@
       "aurelia-polyfills": "^1.0.0-beta.1.1.0"
     }
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "express": "^4.14.0",
+    "markdown": "^0.5.0",
+    "recursive-readdir": "^2.0.0"
+  }
 }

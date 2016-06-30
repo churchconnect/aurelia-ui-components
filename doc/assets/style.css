@@ -1,0 +1,22 @@
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 1.5em;
+    opacity: 1;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #fff;
+}
+
+.header {
+    background: #26282a;
+    height: 110px;
+}
+
+.main-logo {
+    width: 200px;
+}
+
+.footer {
+    padding-top: 0;
+}
