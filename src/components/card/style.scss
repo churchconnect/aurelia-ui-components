@@ -6,7 +6,9 @@ $card-vertical-spacing: em($large-spacing);
     @include flex-direction(column);
     @include align-items(center);
 
+    box-shadow: 0 em(3px) em(6px) 0 rgba(0, 0, 0, .16);
     font-size: 1rem;
+    margin: em($base-spacing) em($medium-spacing);
     padding: $card-vertical-spacing $card-horizontal-spacing;
 
     p {

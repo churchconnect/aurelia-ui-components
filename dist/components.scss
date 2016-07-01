@@ -69,22 +69,6 @@ $base-border: 1px solid $base-border-color !default;
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
 
-button {
-    background: color(primary, base);
-    border: none;
-    border-radius: $base-border-radius;
-    color: color(neutral, lightest);
-    cursor: pointer;
-    font-size: em($medium-font-size);
-    outline: none;
-    padding: em($small-spacing) 0;
-    text-transform: uppercase;
-
-    &:active {
-        background: darken(color(primary, base), 10%);
-    }
-}
-
 $card-horizontal-spacing: em($large-spacing);
 $card-vertical-spacing: em($large-spacing);
 
@@ -93,7 +77,9 @@ $card-vertical-spacing: em($large-spacing);
     @include flex-direction(column);
     @include align-items(center);
 
+    box-shadow: 0 em(3px) em(6px) 0 rgba(0, 0, 0, .16);
     font-size: 1rem;
+    margin: em($base-spacing) em($medium-spacing);
     padding: $card-vertical-spacing $card-horizontal-spacing;
 
     p {
@@ -201,5 +187,32 @@ $card-vertical-spacing: em($large-spacing);
         & + input {
             display: none;
         }
+    }
+}
+
+.hamburger-icon {
+    font-size: 1rem;
+
+    i {
+        background: color(neutral, lightest);
+        border-radius: 5px;
+        height: em(4px);
+        width: em(20px);
+    }
+}
+
+button {
+    background: color(primary, base);
+    border: none;
+    border-radius: $base-border-radius;
+    color: color(neutral, lightest);
+    cursor: pointer;
+    font-size: em($medium-font-size);
+    outline: none;
+    padding: em($small-spacing) 0;
+    text-transform: uppercase;
+
+    &:active {
+        background: darken(color(primary, base), 10%);
     }
 }
