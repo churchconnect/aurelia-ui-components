@@ -1,0 +1,43 @@
+.panel {
+    background: #1a1a1a;
+    font-size: 1rem;
+    width: 88%;
+
+    .list-block {
+        margin: 0;
+
+        ul {
+            background: none;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+
+            li {
+                background: transparent;
+                color: color(primary, dark);
+                padding-left: em($x-large-spacing);
+                transition: background $base-duration $base-timing, color $base-duration $base-timing;
+
+                &.active {
+                    background: color(primary, darker);
+                    color: color(neutral, lightest);
+                }
+
+                .item-media {
+                    font-size: em($large-font-size);
+                }
+
+                .item-inner {
+                    margin-left: em($x-large-spacing);
+                    padding: em($medium-spacing * 1.2) 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

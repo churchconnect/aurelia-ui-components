@@ -2,6 +2,7 @@ let components = {
     card: [
         './components/card/index',
         './components/button/index',
+        './components/navigation/index',
     ]
 }
 
