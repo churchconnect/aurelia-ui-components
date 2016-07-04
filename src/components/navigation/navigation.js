@@ -4,6 +4,8 @@ import {inlineView, bindable, containerless} from 'aurelia-framework'
 @inlineView(`
 <template>
     <div class="panel panel-reveal" class.bind="alignRight ? 'panel-right' : 'panel-left'">
+        <slot name="before-navigation"></slot>
+
         <div class="list-block">
             <ul>
                 <navigation-link repeat.for="link of router.navigation"
@@ -14,6 +16,8 @@ import {inlineView, bindable, containerless} from 'aurelia-framework'
                 </navigation-link>
             </ul>
         </div>
+
+        <slot name="after-navigation"></slot>
     </div>
 </template>
 `)
