@@ -3,6 +3,7 @@ let components = {
         './components/card/index',
         './components/button/index',
         './components/navigation/index',
+        './components/tabs/index',
     ]
 }
 

@@ -1,0 +1,20 @@
+.toolbar {
+    background: color(primary, base);
+    font-size: 1rem;
+
+    .toolbar-inner {
+        .tab-link {
+            color: color(neutral, lightest);
+            font-size: em($base-font-size);
+            padding: em(7px) 0;
+
+            i {
+                font-size: em($large-font-size);
+            }
+
+            span {
+                font-size: em($x-small-font-size);
+            }
+        }
+    }
+}
