@@ -4,6 +4,7 @@ let components = {
         './components/button/index',
         './components/navigation/index',
         './components/tabs/index',
+        './components/page/index',
     ]
 }
 
