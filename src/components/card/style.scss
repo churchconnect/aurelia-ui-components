@@ -46,21 +46,6 @@ $card-vertical-spacing: em($large-spacing);
     }
 }
 
-.card-image {
-    width: 100%;
-
-    &.full-width {
-        @include calc(width, "100% + #{$card-horizontal-spacing} * 2");
-
-        position: relative;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
 .card-links {
     @include display(flex);
     @include justify-content(space-around);

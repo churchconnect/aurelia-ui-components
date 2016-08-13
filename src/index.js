@@ -7,6 +7,7 @@ let components = {
         './components/page/index',
         './components/profile/index',
         './components/list/index',
+        './components/media/index',
     ]
 }
 

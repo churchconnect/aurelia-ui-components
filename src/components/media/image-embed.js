@@ -3,12 +3,12 @@ import {inlineView, bindable, containerless} from 'aurelia-framework'
 @containerless()
 @inlineView(`
 <template>
-    <div class="card-image" class.bind="fullWidth ? 'full-width' : ''">
+    <div class="image" class.bind="fullWidth ? 'full-width' : ''">
         <img src.bind="source">
     </div>
 </template>
 `)
-export class CardImage {
+export class ImageEmbed {
 
     @bindable source = ''
     @bindable fullWidth = false

@@ -1,0 +1,18 @@
+$full-width-additional-padding: em($large-spacing);
+
+.image,
+.video {
+    background: color(neutral, lighter);
+    width: 100%;
+
+    &.full-width {
+        @include calc(width, "100% + #{$full-width-additional-padding * 2}");
+
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
