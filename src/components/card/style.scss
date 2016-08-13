@@ -127,6 +127,10 @@ $card-vertical-spacing: em($large-spacing);
     font-size: 1rem;
     padding-bottom: em($base-spacing);
 
+    .card {
+        margin-top: 0;
+    }
+
     .swiper-pagination {
         bottom: em($x-small-spacing);
     }
