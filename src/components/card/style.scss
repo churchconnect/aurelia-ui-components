@@ -107,25 +107,3 @@ $card-vertical-spacing: em($large-spacing);
         }
     }
 }
-
-.swiper-container {
-    font-size: 1rem;
-    padding-bottom: em($base-spacing);
-
-    .card {
-        margin-top: 0;
-    }
-
-    .swiper-pagination {
-        bottom: em($x-small-spacing);
-    }
-
-    .swiper-pagination-bullet {
-        background: lighten(color(neutral, darkest), 10%);
-        transition: background $base-duration $base-timing;
-
-        &.swiper-pagination-bullet-active {
-            background: color(neutral, darkest);
-        }
-    }
-}

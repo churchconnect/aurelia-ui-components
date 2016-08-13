@@ -4,10 +4,8 @@ import {inlineView, containerless} from 'aurelia-framework'
 @inlineView(`
 <template>
     <div class="swiper-slide">
-        <card>
-            <slot></slot>
-        </card>
+        <slot></slot>
     </div>
 </template>
 `)
-export class SwipeableCard {}
+export class Slide {}
