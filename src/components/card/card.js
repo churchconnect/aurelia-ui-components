@@ -1,11 +1,15 @@
-import {inlineView, containerless} from 'aurelia-framework'
+import {inlineView, bindable, containerless} from 'aurelia-framework'
 
 @containerless()
 @inlineView(`
 <template>
-    <div class="card">
+    <div class="card" class.bind="fullHeight ? 'full-height' : ''">
         <slot></slot>
     </div>
 </template>
 `)
-export class Card {}
+export class Card {
+
+    @bindable fullHeight
+
+}

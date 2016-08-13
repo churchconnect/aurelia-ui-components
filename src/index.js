@@ -6,6 +6,7 @@ let components = {
         './components/tabs/index',
         './components/page/index',
         './components/profile/index',
+        './components/list/index',
     ]
 }
 

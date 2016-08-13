@@ -1,0 +1,57 @@
+$list-item-vertical-spacing: em($medium-spacing);
+$list-item-horizontal-spacing: em($base-spacing);
+$full-width-additional-padding: em($large-spacing);
+
+.list-block {
+    font-size: 1em;
+    width: 100%;
+
+    &.full-width {
+        @include calc(width, "100% + #{$full-width-additional-padding * 2}")
+    }
+
+    li:nth-child(even) {
+        background: color(neutral, lighter);
+    }
+
+    .item-content {
+        padding: $list-item-vertical-spacing $list-item-horizontal-spacing;
+    }
+
+    .item-inner {
+        padding: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .item-title {
+        p {
+            margin: 0;
+        }
+
+        small {
+            color: color(neutral, base);
+            font-size: em($medium-font-size);
+        }
+    }
+
+    [slot="after-content"] {
+        @include display(flex);
+    }
+
+    .item-media {
+        font-size: em($large-font-size);
+        margin-left: em($medium-spacing, $large-font-size);
+        padding: 0;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        .fa-spotify:before {
+            color: color(social, spotify);
+        }
+    }
+}

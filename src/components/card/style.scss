@@ -9,7 +9,11 @@ $card-vertical-spacing: em($large-spacing);
     box-shadow: 0 em(3px) em(6px) 0 rgba(0, 0, 0, .16);
     font-size: 1rem;
     margin: em($base-spacing) em($medium-spacing);
-    padding: $card-vertical-spacing $card-horizontal-spacing;
+    padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+
+    &.full-height {
+        padding-bottom: 0;
+    }
 
     p {
         font-size: em($medium-font-size);
@@ -24,7 +28,7 @@ $card-vertical-spacing: em($large-spacing);
     font-size: 1em;
     margin: 0 0 em($large-spacing) 0;
     min-height: 0;
-    padding: 0;
+    padding: $card-vertical-spacing 0 0 0;
     width: 100%;
 
     &:after {
