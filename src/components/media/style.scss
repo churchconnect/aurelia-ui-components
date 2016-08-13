@@ -19,22 +19,49 @@ $full-width-additional-padding: em($large-spacing);
 
 .swiper-container {
     font-size: 1rem;
-    padding-bottom: em($base-spacing);
+    padding-bottom: 0;
+
+    &.has-pagination {
+        padding-bottom: em($base-spacing);
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.swiper-pagination {
+    bottom: em($x-small-spacing);
+}
+
+.swiper-pagination-bullet {
+    background: lighten(color(neutral, darkest), 10%);
+    transition: background $base-duration $base-timing;
+
+    &.swiper-pagination-bullet-active {
+        background: color(neutral, darkest);
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
+    background: none;
+    color: color(neutral, lightest);
+}
+
+.swiper-slide {
+    width: 100%;
+
+    & > img {
+        width: 100%;
+        height: auto;
+    }
 
     .card {
         margin-top: 0;
-    }
-
-    .swiper-pagination {
-        bottom: em($x-small-spacing);
-    }
-
-    .swiper-pagination-bullet {
-        background: lighten(color(neutral, darkest), 10%);
-        transition: background $base-duration $base-timing;
-
-        &.swiper-pagination-bullet-active {
-            background: color(neutral, darkest);
-        }
     }
 }

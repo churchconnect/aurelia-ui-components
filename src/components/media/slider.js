@@ -4,15 +4,19 @@ import {generateRandomId} from '../../utils/random'
 @containerless()
 @inlineView(`
 <template>
-    <div class="swiper-container" class.bind="id">
+    <div class="swiper-container" class.bind="containerClasses" id.bind="id">
         <div class="swiper-pagination" show.bind="showPagination"></div>
 
         <div class="swiper-wrapper">
             <slot></slot>
         </div>
 
-        <div class="swiper-button-prev" show.bind="showControls"></div>
-        <div class="swiper-button-next" show.bind="showControls"></div>
+        <div class="swiper-button-prev" show.bind="showControls">
+            <i class="fa fa-chevron-left"></i>
+        </div>
+        <div class="swiper-button-next" show.bind="showControls">
+            <i class="fa fa-chevron-right"></i>
+        </div>
     </div>
 </template>
 `)
@@ -21,18 +25,36 @@ export class Slider {
     @bindable f7
     @bindable showPagination = false
     @bindable showControls = false
+    @bindable loop = false
+    @bindable fullWidth = false
 
     constructor() {
         this.id = `swiper-${generateRandomId()}`
     }
 
+    // TODO: move this into the view?
+    get containerClasses() {
+        if (!this._containerClasses) {
+            let classes = []
+
+            if (this.fullWidth) classes.push('full-width')
+            if (this.showPagination) classes.push('has-pagination')
+            if (this.showControls) classes.push('has-controls')
+
+            this._containerClasses = classes.join(' ')
+        }
+
+        return this._containerClasses
+    }
+
     attached() {
-        this.swiper = this.f7.swiper(`.${this.id}`, {
-            pagination: `.${this.id} .swiper-pagination`,
+        this.swiper = this.f7.swiper(`#${this.id}`, {
+            pagination: `#${this.id} .swiper-pagination`,
             spaceBetween: 0,
             paginationClickable: true,
-            nextButton: `.${this.id} .swiper-button-next`,
-            prevButton: `.${this.id} .swiper-button-prev`
+            nextButton: `#${this.id} .swiper-button-next`,
+            prevButton: `#${this.id} .swiper-button-prev`,
+            loop: this.loop,
         })
     }
 
