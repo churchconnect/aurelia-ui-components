@@ -1,5 +1,6 @@
-import {inlineView, bindable, containerless} from 'aurelia-framework'
+import {inject, inlineView, bindable, containerless} from 'aurelia-framework'
 import {generateRandomId} from '../../utils/random'
+import {Config} from '../../config'
 
 @containerless()
 @inlineView(`
@@ -20,16 +21,17 @@ import {generateRandomId} from '../../utils/random'
     </div>
 </template>
 `)
+@inject(Config)
 export class Slider {
 
-    @bindable f7
     @bindable showPagination = false
     @bindable showControls = false
     @bindable loop = false
     @bindable fullWidth = false
 
-    constructor() {
+    constructor(config) {
         this.id = `swiper-${generateRandomId()}`
+        this.config = config
     }
 
     // TODO: move this into the view?
@@ -48,7 +50,7 @@ export class Slider {
     }
 
     attached() {
-        this.swiper = this.f7.swiper(`#${this.id}`, {
+        this.swiper = this.config.f7.swiper(`#${this.id}`, {
             pagination: `#${this.id} .swiper-pagination`,
             spaceBetween: 0,
             paginationClickable: true,
