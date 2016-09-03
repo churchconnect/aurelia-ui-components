@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./card', './card-header', './card-image', './card-links', './card-actions', './card-input-amount'], function (_export, _context) {
+System.register(['./card', './card-header', './card-links', './card-actions', './card-input-amount'], function (_export, _context) {
   "use strict";
 
   return {
@@ -20,38 +20,30 @@ System.register(['./card', './card-header', './card-image', './card-links', './c
       }
 
       _export(_exportObj2);
-    }, function (_cardImage) {
+    }, function (_cardLinks) {
       var _exportObj3 = {};
 
-      for (var _key3 in _cardImage) {
-        if (_key3 !== "default") _exportObj3[_key3] = _cardImage[_key3];
+      for (var _key3 in _cardLinks) {
+        if (_key3 !== "default") _exportObj3[_key3] = _cardLinks[_key3];
       }
 
       _export(_exportObj3);
-    }, function (_cardLinks) {
+    }, function (_cardActions) {
       var _exportObj4 = {};
 
-      for (var _key4 in _cardLinks) {
-        if (_key4 !== "default") _exportObj4[_key4] = _cardLinks[_key4];
+      for (var _key4 in _cardActions) {
+        if (_key4 !== "default") _exportObj4[_key4] = _cardActions[_key4];
       }
 
       _export(_exportObj4);
-    }, function (_cardActions) {
+    }, function (_cardInputAmount) {
       var _exportObj5 = {};
 
-      for (var _key5 in _cardActions) {
-        if (_key5 !== "default") _exportObj5[_key5] = _cardActions[_key5];
+      for (var _key5 in _cardInputAmount) {
+        if (_key5 !== "default") _exportObj5[_key5] = _cardInputAmount[_key5];
       }
 
       _export(_exportObj5);
-    }, function (_cardInputAmount) {
-      var _exportObj6 = {};
-
-      for (var _key6 in _cardInputAmount) {
-        if (_key6 !== "default") _exportObj6[_key6] = _cardInputAmount[_key6];
-      }
-
-      _export(_exportObj6);
     }],
     execute: function () {}
   };

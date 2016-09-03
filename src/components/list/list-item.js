@@ -9,7 +9,11 @@ import {inlineView, bindable, containerless} from 'aurelia-framework'
 
             <div class="item-inner">
                 <div class="item-title">
-                    <p innerHtml.bind="title"></p>
+                    <p>
+                        <a href.bind="titleLink" innerHtml.bind="title" if.bind="titleLink" target="_blank"></a>
+                        <span innerHtml.bind="title" if.bind="!titleLink"></span>
+                    </p>
+
                     <small innerHtml.bind="subtitle" if.bind="subtitle"></small>
                 </div>
 
@@ -25,6 +29,7 @@ export class ListItem {
 
     @bindable icon
     @bindable title
+    @bindable titleLink
     @bindable subtitle
 
 }

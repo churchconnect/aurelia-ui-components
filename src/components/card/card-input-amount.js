@@ -18,7 +18,7 @@ export class CardInputAmount {
     @bindable amount = 0
     @bindable inputAmount = ''
 
-    constructor() {
+    amountChanged() {
         this.inputAmount = this.amount
     }
 

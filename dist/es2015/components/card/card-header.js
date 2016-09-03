@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -49,7 +49,11 @@ export let CardHeader = (_dec = containerless(), _dec2 = inlineView(`
 <template>
     <div class="card-header">
         <h2 innerHtml.bind="title"></h2>
-        <small innerHtml.bind="subtitle"></small>
+        <small innerHtml.bind="subtitle" if.bind="subtitle"></small>
+        <small if.bind="date">
+            <i class="fa fa-clock-o"></i>
+            <span innerHtml.bind="date"></span>
+        </small>
     </div>
 </template>
 `), _dec(_class = _dec2(_class = (_class2 = class CardHeader {
@@ -57,6 +61,8 @@ export let CardHeader = (_dec = containerless(), _dec2 = inlineView(`
         _initDefineProp(this, 'title', _descriptor, this);
 
         _initDefineProp(this, 'subtitle', _descriptor2, this);
+
+        _initDefineProp(this, 'date', _descriptor3, this);
     }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {
@@ -65,6 +71,11 @@ export let CardHeader = (_dec = containerless(), _dec2 = inlineView(`
         return '';
     }
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'subtitle', [bindable], {
+    enumerable: true,
+    initializer: function () {
+        return '';
+    }
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'date', [bindable], {
     enumerable: true,
     initializer: function () {
         return '';

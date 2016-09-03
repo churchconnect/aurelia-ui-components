@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, CardHeader;
+    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, CardHeader;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -61,18 +61,25 @@ System.register(['aurelia-framework'], function (_export, _context) {
             containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
-            _export('CardHeader', CardHeader = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card-header">\n        <h2 innerHtml.bind="title"></h2>\n        <small innerHtml.bind="subtitle"></small>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function CardHeader() {
+            _export('CardHeader', CardHeader = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card-header">\n        <h2 innerHtml.bind="title"></h2>\n        <small innerHtml.bind="subtitle" if.bind="subtitle"></small>\n        <small if.bind="date">\n            <i class="fa fa-clock-o"></i>\n            <span innerHtml.bind="date"></span>\n        </small>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function CardHeader() {
                 _classCallCheck(this, CardHeader);
 
                 _initDefineProp(this, 'title', _descriptor, this);
 
                 _initDefineProp(this, 'subtitle', _descriptor2, this);
+
+                _initDefineProp(this, 'date', _descriptor3, this);
             }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return '';
                 }
             }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'subtitle', [bindable], {
+                enumerable: true,
+                initializer: function initializer() {
+                    return '';
+                }
+            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'date', [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return '';

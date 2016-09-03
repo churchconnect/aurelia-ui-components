@@ -64,9 +64,11 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
             _initDefineProp(this, 'amount', _descriptor, this);
 
             _initDefineProp(this, 'inputAmount', _descriptor2, this);
-
-            this.inputAmount = this.amount;
         }
+
+        CardInputAmount.prototype.amountChanged = function amountChanged() {
+            this.inputAmount = this.amount;
+        };
 
         CardInputAmount.prototype.setAmount = function setAmount() {
             if (!this.isValidAmount(this.inputAmount)) this.inputAmount = 0;

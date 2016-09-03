@@ -53,12 +53,13 @@ export let CardInputAmount = (_dec = containerless(), _dec2 = inlineView(`
     </div>
 </template>
 `), _dec(_class = _dec2(_class = (_class2 = class CardInputAmount {
-
     constructor() {
         _initDefineProp(this, 'amount', _descriptor, this);
 
         _initDefineProp(this, 'inputAmount', _descriptor2, this);
+    }
 
+    amountChanged() {
         this.inputAmount = this.amount;
     }
 

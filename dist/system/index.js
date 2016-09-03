@@ -1,21 +1,25 @@
 'use strict';
 
-System.register([], function (_export, _context) {
+System.register(['./config'], function (_export, _context) {
     "use strict";
 
-    var components;
+    var Config, components;
     return {
-        setters: [],
+        setters: [function (_config) {
+            Config = _config.Config;
+        }],
         execute: function () {
             components = {
-                card: ['./components/card/index', './components/button/index']
+                card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index']
             };
-            function configure(config) {
-                var includes = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
+            function configure(aurelia, configCallback) {
+                var includes = arguments.length <= 2 || arguments[2] === undefined ? [] : arguments[2];
+
+                configCallback(aurelia.container.get(Config));
 
                 if (!includes.length) includes = Object.keys(components);
 
-                config.globalResources(includes.reduce(function (resources, key) {
+                aurelia.globalResources(includes.reduce(function (resources, key) {
                     return resources.concat(components[key]);
                 }, []));
             }

@@ -8,7 +8,7 @@ import {Config} from '../../config'
     <div class="swiper-container" class.bind="containerClasses" id.bind="id">
         <div class="swiper-pagination" show.bind="showPagination"></div>
 
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" ref="slidesWrapper">
             <slot></slot>
         </div>
 
@@ -49,6 +49,10 @@ export class Slider {
         return this._containerClasses
     }
 
+    get slides() {
+        return this.slidesWrapper.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
+    }
+
     attached() {
         this.swiper = this.config.f7.swiper(`#${this.id}`, {
             pagination: `#${this.id} .swiper-pagination`,
@@ -58,6 +62,8 @@ export class Slider {
             prevButton: `#${this.id} .swiper-button-prev`,
             loop: this.loop,
         })
+
+        if (this.slides.length <= 1) this.showControls = false
     }
 
     detached() {

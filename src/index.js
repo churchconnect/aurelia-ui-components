@@ -3,13 +3,13 @@ import {Config} from './config'
 let components = {
     card: [
         './components/card/index',
-        './components/button/index',
         './components/navigation/index',
         './components/tabs/index',
         './components/page/index',
         './components/profile/index',
         './components/list/index',
         './components/media/index',
+        './components/map/index',
     ]
 }
 

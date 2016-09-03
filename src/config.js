@@ -4,4 +4,8 @@ export class Config {
         this.f7 = f7
     }
 
+    registerGoogleMapsApiKey(key) {
+        this.googleMapsApiKey = key
+    }
+
 }
