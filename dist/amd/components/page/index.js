@@ -5,7 +5,7 @@ define(['exports', './pull-to-refresh'], function (exports, _pullToRefresh) {
     value: true
   });
   Object.keys(_pullToRefresh).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {

@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var _imageEmbed = require('./image-embed');
 
 Object.keys(_imageEmbed).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -19,7 +19,7 @@ Object.keys(_imageEmbed).forEach(function (key) {
 var _videoEmbed = require('./video-embed');
 
 Object.keys(_videoEmbed).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -31,7 +31,7 @@ Object.keys(_videoEmbed).forEach(function (key) {
 var _slider = require('./slider');
 
 Object.keys(_slider).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -43,7 +43,7 @@ Object.keys(_slider).forEach(function (key) {
 var _slide = require('./slide');
 
 Object.keys(_slide).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -55,7 +55,7 @@ Object.keys(_slide).forEach(function (key) {
 var _responsiveIframe = require('./responsive-iframe');
 
 Object.keys(_responsiveIframe).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {

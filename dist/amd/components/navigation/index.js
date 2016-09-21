@@ -5,7 +5,7 @@ define(['exports', './navigation', './navigation-link'], function (exports, _nav
     value: true
   });
   Object.keys(_navigation).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -14,7 +14,7 @@ define(['exports', './navigation', './navigation-link'], function (exports, _nav
     });
   });
   Object.keys(_navigationLink).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
