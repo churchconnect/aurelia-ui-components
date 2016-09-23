@@ -201,6 +201,21 @@ $card-vertical-spacing: em($large-spacing);
     }
 }
 
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px color(neutral, base);
+    border-radius: em($x-small-spacing);
+    padding: em($medium-spacing) em($small-spacing);
+    margin: 0 0 em($large-spacing);
+    font-size: em($medium-font-size);
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 em($small-spacing) 0;
+}
+
 $list-item-vertical-spacing: em($medium-spacing);
 $list-item-horizontal-spacing: em($base-spacing);
 $full-width-additional-padding: em($large-spacing);
@@ -257,11 +272,6 @@ $full-width-additional-padding: em($large-spacing);
             color: color(social, spotify);
         }
     }
-}
-
-.map {
-    background: color(neutral, lighter);
-    width: 100%;
 }
 
 $full-width-additional-padding: em($large-spacing);
@@ -332,6 +342,83 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+.page-header {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(flex-end);
+
+    display: flex;
+    font-size: 1em;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+    width: 100%;
+
+    &:after {
+        display: none;
+    }
+
+    h2 {
+        width: 100%;
+        color: color(neutral, lightest);
+        font-size: em($base-font-size);
+        padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
+        margin: 0;
+        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+    }
+
+    small {
+        color: color(neutral, base);
+        font-size: em($small-font-size);
+    }
+
+    &.banner {
+        min-height: $base-spacing * 7.5;
+    }
+}
+
+.page-body {
+    padding: $card-vertical-spacing $card-horizontal-spacing;
+
+    button {
+        width:100%;
+    }
+}
+
+.profile-summary {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+
+    font-size: 1rem;
+    height: em(182px);
+    margin: 0;
+
+    .profile-pic {
+        background-clip: content-box;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: em(4px) solid rgba(255, 255, 255, .28);
+        border-radius: 50%;
+        overflow: hidden;
+        width: em(100px);
+        height: em(100px);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .profile-name {
+        color: color(neutral, lightest);
+        font-size: em($large-font-size);
+        margin-top: em($x-small-spacing);
+    }
+}
+
 .panel {
     background: #1a1a1a;
     font-size: 1rem;
@@ -376,38 +463,9 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
-.profile-summary {
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
-    @include align-items(center);
-
-    font-size: 1rem;
-    height: em(182px);
-    margin: 0;
-
-    .profile-pic {
-        background-clip: content-box;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: em(4px) solid rgba(255, 255, 255, .28);
-        border-radius: 50%;
-        overflow: hidden;
-        width: em(100px);
-        height: em(100px);
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    .profile-name {
-        color: color(neutral, lightest);
-        font-size: em($large-font-size);
-        margin-top: em($x-small-spacing);
-    }
+.map {
+    background: color(neutral, lighter);
+    width: 100%;
 }
 
 .toolbar {
