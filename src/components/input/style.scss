@@ -4,8 +4,11 @@ input, textarea {
     border: solid 1px color(neutral, base);
     border-radius: em($x-small-spacing);
     padding: em($medium-spacing) em($small-spacing);
+    margin: 0 0 em($large-spacing);
+    font-size: em($medium-font-size);
 }
 
 label {
-    margin-top:10px;
+    display: inline-block;
+    margin: 0 0 em($small-spacing) 0;
 }

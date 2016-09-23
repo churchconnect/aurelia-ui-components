@@ -18,10 +18,8 @@
         width: 100%;
         color: color(neutral, lightest);
         font-size: em($base-font-size);
-        padding: em($medium-spacing);
-        padding-top: em($x-large-spacing);
-        padding-bottom: em($small-spacing);
-        margin-bottom: 0;
+        padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
+        margin: 0;
         background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
     }
 
@@ -36,7 +34,7 @@
 }
 
 .page-body {
-    padding: 0 $card-horizontal-spacing;
+    padding: $card-vertical-spacing $card-horizontal-spacing;
 
     button {
         width:100%;
