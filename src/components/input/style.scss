@@ -1,0 +1,11 @@
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px color(neutral, base);
+    border-radius: em($x-small-spacing);
+    padding: em($medium-spacing) em($small-spacing);
+}
+
+label {
+    margin-top:10px;
+}

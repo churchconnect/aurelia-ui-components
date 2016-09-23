@@ -1,0 +1,44 @@
+.page-header {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(flex-end);
+
+    display: flex;
+    font-size: 1em;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+    width: 100%;
+
+    &:after {
+        display: none;
+    }
+
+    h2 {
+        width: 100%;
+        color: color(neutral, lightest);
+        font-size: em($base-font-size);
+        padding: em($medium-spacing);
+        padding-top: em($x-large-spacing);
+        padding-bottom: em($small-spacing);
+        margin-bottom: 0;
+        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+    }
+
+    small {
+        color: color(neutral, base);
+        font-size: em($small-font-size);
+    }
+
+    &.banner {
+        min-height: $base-spacing * 7.5;
+    }
+}
+
+.page-body {
+    padding: 0 $card-horizontal-spacing;
+
+    button {
+        width:100%;
+    }
+}
