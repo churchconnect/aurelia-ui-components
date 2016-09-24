@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./pull-to-refresh', './page-header', './page-body'], function (_export, _context) {
+System.register(['./pull-to-refresh', './page-header', './page-body', './page-message'], function (_export, _context) {
   "use strict";
 
   return {
@@ -28,6 +28,14 @@ System.register(['./pull-to-refresh', './page-header', './page-body'], function 
       }
 
       _export(_exportObj3);
+    }, function (_pageMessage) {
+      var _exportObj4 = {};
+
+      for (var _key4 in _pageMessage) {
+        if (_key4 !== "default" && _key4 !== "__esModule") _exportObj4[_key4] = _pageMessage[_key4];
+      }
+
+      _export(_exportObj4);
     }],
     execute: function () {}
   };
