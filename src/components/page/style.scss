@@ -40,3 +40,22 @@
         width:100%;
     }
 }
+
+.page-message {
+    width:100%;
+    box-sizing: border-box;
+    padding: $card-vertical-spacing $card-horizontal-spacing;
+    color: color(neutral, lightest);
+
+    &.success {
+        background: color(message, success);
+    }
+
+    &.error {
+        background: color(message, error);
+    }
+
+    &.warning {
+        background: color(message, warning);
+    }
+}
