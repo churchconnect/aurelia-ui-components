@@ -16,6 +16,7 @@
 
     h2 {
         width: 100%;
+        box-sizing: border-box;
         color: color(neutral, lightest);
         font-size: em($base-font-size);
         padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
