@@ -213,8 +213,12 @@ $card-vertical-spacing: em($large-spacing);
     color: color(neutral, lightest);
     display: block;
     padding: $card-vertical-spacing $card-horizontal-spacing;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
+    margin: 0 auto;
+    opacity: 0.9;
+    border-radius: em($medium-spacing);
+    text-align: center;
 
     a {
         color: darken($color, 70%);
@@ -237,25 +241,26 @@ $card-vertical-spacing: em($large-spacing);
 
 .flash {
     @include transition(top .35s ease-in-out);
-    position: relative;
+
+    position: absolute;
+    top: em(-112px);
+    left: 0;
+    width: 100%;
+    z-index: 500; /* may need to be higher */
 
     &.active {
         @include transition(top .35s ease-in-out);
 
         opacity: 1;
+        top: em($large-spacing);
     }
 }
 
 .flash-close {
-    color: #ef2160;
     font-size: 1.4em;
     position: absolute;
     top: em(19px);
     right: em(20px);
-
-    &:hover {
-        color: darken(#ef2160, 10%);
-    }
 }
 
 .flash-error {
@@ -371,6 +376,79 @@ $full-width-additional-padding: em($large-spacing);
         .fa-spotify:before {
             color: color(social, spotify);
         }
+    }
+}
+
+.map {
+    background: color(neutral, lighter);
+    width: 100%;
+}
+
+$full-width-additional-padding: em($large-spacing);
+
+.image,
+.video {
+    background: color(neutral, lighter);
+    width: 100%;
+
+    &.full-width {
+        @include calc(width, "100% + #{$full-width-additional-padding * 2}");
+
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.swiper-container {
+    font-size: 1rem;
+    padding-bottom: 0;
+
+    &.has-pagination {
+        padding-bottom: em($base-spacing);
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.swiper-pagination {
+    bottom: em($x-small-spacing);
+}
+
+.swiper-pagination-bullet {
+    background: lighten(color(neutral, darkest), 10%);
+    transition: background $base-duration $base-timing;
+
+    &.swiper-pagination-bullet-active {
+        background: color(neutral, darkest);
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
+    background: none;
+    color: color(neutral, lightest);
+}
+
+.swiper-slide {
+    width: 100%;
+
+    & > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        margin-top: 0;
     }
 }
 
@@ -512,79 +590,6 @@ $full-width-additional-padding: em($large-spacing);
         color: color(neutral, lightest);
         font-size: em($large-font-size);
         margin-top: em($x-small-spacing);
-    }
-}
-
-.map {
-    background: color(neutral, lighter);
-    width: 100%;
-}
-
-$full-width-additional-padding: em($large-spacing);
-
-.image,
-.video {
-    background: color(neutral, lighter);
-    width: 100%;
-
-    &.full-width {
-        @include calc(width, "100% + #{$full-width-additional-padding * 2}");
-
-        position: relative;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.swiper-container {
-    font-size: 1rem;
-    padding-bottom: 0;
-
-    &.has-pagination {
-        padding-bottom: em($base-spacing);
-    }
-
-    &.full-width {
-        width: 100%;
-    }
-}
-
-.swiper-pagination {
-    bottom: em($x-small-spacing);
-}
-
-.swiper-pagination-bullet {
-    background: lighten(color(neutral, darkest), 10%);
-    transition: background $base-duration $base-timing;
-
-    &.swiper-pagination-bullet-active {
-        background: color(neutral, darkest);
-    }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-
-    background: none;
-    color: color(neutral, lightest);
-}
-
-.swiper-slide {
-    width: 100%;
-
-    & > img {
-        width: 100%;
-        height: auto;
-    }
-
-    .card {
-        margin-top: 0;
     }
 }
 

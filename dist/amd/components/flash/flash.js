@@ -32,7 +32,7 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator'], function (e
 
     var _dec, _dec2, _dec3, _class;
 
-    var Flash = exports.Flash = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n\t<div class="flash" class.bind="active ? \'active\' : \'\'" if.bind="message.text">\n\t\t<div class.bind="message.type" innerHtml.bind="message.text"></div>\n\n\t\t<a href="javascript:;" class="flash-close" click.delegate="hideMessage()">\n\t\t\t<i class="fa fa-times"></i>\n\t\t</a>\n\t</div>\n</template>\n'), _dec3 = (0, _aureliaFramework.inject)(_aureliaEventAggregator.EventAggregator), _dec(_class = _dec2(_class = _dec3(_class = function () {
+    var Flash = exports.Flash = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n\t<div class="flash" class.bind="active ? \'active\' : \'\'">\n\t\t<div class.bind="message.type" innerHtml.bind="message.text" click.delegate="hideMessage()"></div>\n\t</div>\n</template>\n'), _dec3 = (0, _aureliaFramework.inject)(_aureliaEventAggregator.EventAggregator), _dec(_class = _dec2(_class = _dec3(_class = function () {
         function Flash(events) {
             var _this = this;
 

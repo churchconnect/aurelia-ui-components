@@ -38,7 +38,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator'], function (_ex
                 };
             }();
 
-            _export('Flash', Flash = (_dec = containerless(), _dec2 = inlineView('\n<template>\n\t<div class="flash" class.bind="active ? \'active\' : \'\'" if.bind="message.text">\n\t\t<div class.bind="message.type" innerHtml.bind="message.text"></div>\n\n\t\t<a href="javascript:;" class="flash-close" click.delegate="hideMessage()">\n\t\t\t<i class="fa fa-times"></i>\n\t\t</a>\n\t</div>\n</template>\n'), _dec3 = inject(EventAggregator), _dec(_class = _dec2(_class = _dec3(_class = function () {
+            _export('Flash', Flash = (_dec = containerless(), _dec2 = inlineView('\n<template>\n\t<div class="flash" class.bind="active ? \'active\' : \'\'">\n\t\t<div class.bind="message.type" innerHtml.bind="message.text" click.delegate="hideMessage()"></div>\n\t</div>\n</template>\n'), _dec3 = inject(EventAggregator), _dec(_class = _dec2(_class = _dec3(_class = function () {
                 function Flash(events) {
                     var _this = this;
 
