@@ -11,6 +11,7 @@ import {inlineView, bindable, containerless} from 'aurelia-framework'
 </template>
 `)
 
+//TODO: rename this to ValidatedInputWrapper, since it doesn't really contain an input, it just wraps it.
 export class ValidatedInput {
 
     @bindable title = ""
