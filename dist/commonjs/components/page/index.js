@@ -39,15 +39,3 @@ Object.keys(_pageBody).forEach(function (key) {
     }
   });
 });
-
-var _pageMessage = require('./page-message');
-
-Object.keys(_pageMessage).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _pageMessage[key];
-    }
-  });
-});

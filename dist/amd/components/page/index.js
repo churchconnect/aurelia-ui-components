@@ -1,4 +1,4 @@
-define(['exports', './pull-to-refresh', './page-header', './page-body', './page-message'], function (exports, _pullToRefresh, _pageHeader, _pageBody, _pageMessage) {
+define(['exports', './pull-to-refresh', './page-header', './page-body'], function (exports, _pullToRefresh, _pageHeader, _pageBody) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -28,15 +28,6 @@ define(['exports', './pull-to-refresh', './page-header', './page-body', './page-
       enumerable: true,
       get: function () {
         return _pageBody[key];
-      }
-    });
-  });
-  Object.keys(_pageMessage).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    Object.defineProperty(exports, key, {
-      enumerable: true,
-      get: function () {
-        return _pageMessage[key];
       }
     });
   });
