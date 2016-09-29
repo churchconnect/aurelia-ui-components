@@ -4,12 +4,8 @@ import {EventAggregator} from 'aurelia-event-aggregator'
 @containerless()
 @inlineView(`
 <template>
-	<div class="flash" class.bind="active ? 'active' : ''" if.bind="message.text">
-		<div class.bind="message.type" innerHtml.bind="message.text"></div>
-
-		<a href="javascript:;" class="flash-close" click.delegate="hideMessage()">
-			<i class="fa fa-times"></i>
-		</a>
+	<div class="flash" class.bind="active ? 'active' : ''">
+		<div class.bind="message.type" innerHtml.bind="message.text" click.delegate="hideMessage()"></div>
 	</div>
 </template>
 `)

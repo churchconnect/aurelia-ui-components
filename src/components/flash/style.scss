@@ -3,8 +3,12 @@
     color: color(neutral, lightest);
     display: block;
     padding: $card-vertical-spacing $card-horizontal-spacing;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
+    margin: 0 auto;
+    opacity: 0.9;
+    border-radius: em($medium-spacing);
+    text-align: center;
 
     a {
         color: darken($color, 70%);
@@ -27,25 +31,26 @@
 
 .flash {
     @include transition(top .35s ease-in-out);
-    position: relative;
+
+    position: absolute;
+    top: em(-112px);
+    left: 0;
+    width: 100%;
+    z-index: 500; /* may need to be higher */
 
     &.active {
         @include transition(top .35s ease-in-out);
 
         opacity: 1;
+        top: em($large-spacing);
     }
 }
 
 .flash-close {
-    color: #ef2160;
     font-size: 1.4em;
     position: absolute;
     top: em(19px);
     right: em(20px);
-
-    &:hover {
-        color: darken(#ef2160, 10%);
-    }
 }
 
 .flash-error {
