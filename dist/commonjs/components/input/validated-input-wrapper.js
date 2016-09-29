@@ -1,4 +1,13 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.ValidatedInputWrapper = undefined;
+
 var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+
+var _aureliaFramework = require("aurelia-framework");
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -9,6 +18,8 @@ function _initDefineProp(target, property, descriptor, context) {
         value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
     });
 }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
@@ -43,31 +54,20 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+var ValidatedInputWrapper = exports.ValidatedInputWrapper = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)("\n<template>\n    <div class=\"validated-input-wrapper\" validation-errors.bind=\"errors\" class.bind=\"errors.length ? 'has-error' : ''\">\n        <label for.bind=\"for\" innerHtml.bind=\"title\"></label>\n        <slot></slot>\n        <validation-error-list errors.bind=\"errors\"></validation-error-list>\n    </div>\n</template>\n"), _dec(_class = _dec2(_class = (_class2 = function ValidatedInputWrapper() {
+    _classCallCheck(this, ValidatedInputWrapper);
 
-export let ValidatedInput = (_dec = containerless(), _dec2 = inlineView(`
-<template>
-    <div class="validated-input" validation-errors.bind="errors" class.bind="errors.length ? 'has-error' : ''">
-        <label for.bind="for" innerHtml.bind="title"></label>
-        <slot></slot>
-        <validation-error-list errors.bind="errors"></validation-error-list>
-    </div>
-</template>
-`), _dec(_class = _dec2(_class = (_class2 = class ValidatedInput {
-    constructor() {
-        _initDefineProp(this, "title", _descriptor, this);
+    _initDefineProp(this, "title", _descriptor, this);
 
-        _initDefineProp(this, "for", _descriptor2, this);
-    }
-
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [bindable], {
+    _initDefineProp(this, "for", _descriptor2, this);
+}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [_aureliaFramework.bindable], {
     enumerable: true,
-    initializer: function () {
+    initializer: function initializer() {
         return "";
     }
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "for", [bindable], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "for", [_aureliaFramework.bindable], {
     enumerable: true,
-    initializer: function () {
+    initializer: function initializer() {
         return "";
     }
 })), _class2)) || _class) || _class);

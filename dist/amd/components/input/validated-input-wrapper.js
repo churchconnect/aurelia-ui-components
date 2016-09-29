@@ -4,7 +4,7 @@ define(["exports", "aurelia-framework"], function (exports, _aureliaFramework) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.ValidatedInput = undefined;
+    exports.ValidatedInputWrapper = undefined;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -57,8 +57,8 @@ define(["exports", "aurelia-framework"], function (exports, _aureliaFramework) {
 
     var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
-    var ValidatedInput = exports.ValidatedInput = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)("\n<template>\n    <div class=\"validated-input\" validation-errors.bind=\"errors\" class.bind=\"errors.length ? 'has-error' : ''\">\n        <label for.bind=\"for\" innerHtml.bind=\"title\"></label>\n        <slot></slot>\n        <validation-error-list errors.bind=\"errors\"></validation-error-list>\n    </div>\n</template>\n"), _dec(_class = _dec2(_class = (_class2 = function ValidatedInput() {
-        _classCallCheck(this, ValidatedInput);
+    var ValidatedInputWrapper = exports.ValidatedInputWrapper = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)("\n<template>\n    <div class=\"validated-input-wrapper\" validation-errors.bind=\"errors\" class.bind=\"errors.length ? 'has-error' : ''\">\n        <label for.bind=\"for\" innerHtml.bind=\"title\"></label>\n        <slot></slot>\n        <validation-error-list errors.bind=\"errors\"></validation-error-list>\n    </div>\n</template>\n"), _dec(_class = _dec2(_class = (_class2 = function ValidatedInputWrapper() {
+        _classCallCheck(this, ValidatedInputWrapper);
 
         _initDefineProp(this, "title", _descriptor, this);
 

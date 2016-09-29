@@ -3,7 +3,7 @@
 System.register(["aurelia-framework"], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, ValidatedInput;
+    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, ValidatedInputWrapper;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -61,8 +61,8 @@ System.register(["aurelia-framework"], function (_export, _context) {
             containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
-            _export("ValidatedInput", ValidatedInput = (_dec = containerless(), _dec2 = inlineView("\n<template>\n    <div class=\"validated-input\" validation-errors.bind=\"errors\" class.bind=\"errors.length ? 'has-error' : ''\">\n        <label for.bind=\"for\" innerHtml.bind=\"title\"></label>\n        <slot></slot>\n        <validation-error-list errors.bind=\"errors\"></validation-error-list>\n    </div>\n</template>\n"), _dec(_class = _dec2(_class = (_class2 = function ValidatedInput() {
-                _classCallCheck(this, ValidatedInput);
+            _export("ValidatedInputWrapper", ValidatedInputWrapper = (_dec = containerless(), _dec2 = inlineView("\n<template>\n    <div class=\"validated-input-wrapper\" validation-errors.bind=\"errors\" class.bind=\"errors.length ? 'has-error' : ''\">\n        <label for.bind=\"for\" innerHtml.bind=\"title\"></label>\n        <slot></slot>\n        <validation-error-list errors.bind=\"errors\"></validation-error-list>\n    </div>\n</template>\n"), _dec(_class = _dec2(_class = (_class2 = function ValidatedInputWrapper() {
+                _classCallCheck(this, ValidatedInputWrapper);
 
                 _initDefineProp(this, "title", _descriptor, this);
 
@@ -79,7 +79,7 @@ System.register(["aurelia-framework"], function (_export, _context) {
                 }
             })), _class2)) || _class) || _class));
 
-            _export("ValidatedInput", ValidatedInput);
+            _export("ValidatedInputWrapper", ValidatedInputWrapper);
         }
     };
 });

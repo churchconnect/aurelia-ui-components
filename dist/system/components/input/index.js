@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./validation-error-list', './validated-input'], function (_export, _context) {
+System.register(['./validation-error-list', './validated-input-wrapper'], function (_export, _context) {
   "use strict";
 
   return {
@@ -12,11 +12,11 @@ System.register(['./validation-error-list', './validated-input'], function (_exp
       }
 
       _export(_exportObj);
-    }, function (_validatedInput) {
+    }, function (_validatedInputWrapper) {
       var _exportObj2 = {};
 
-      for (var _key2 in _validatedInput) {
-        if (_key2 !== "default" && _key2 !== "__esModule") _exportObj2[_key2] = _validatedInput[_key2];
+      for (var _key2 in _validatedInputWrapper) {
+        if (_key2 !== "default" && _key2 !== "__esModule") _exportObj2[_key2] = _validatedInputWrapper[_key2];
       }
 
       _export(_exportObj2);

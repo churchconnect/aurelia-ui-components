@@ -16,14 +16,14 @@ Object.keys(_validationErrorList).forEach(function (key) {
   });
 });
 
-var _validatedInput = require('./validated-input');
+var _validatedInputWrapper = require('./validated-input-wrapper');
 
-Object.keys(_validatedInput).forEach(function (key) {
+Object.keys(_validatedInputWrapper).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
-      return _validatedInput[key];
+      return _validatedInputWrapper[key];
     }
   });
 });

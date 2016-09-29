@@ -1,4 +1,4 @@
-define(['exports', './validation-error-list', './validated-input'], function (exports, _validationErrorList, _validatedInput) {
+define(['exports', './validation-error-list', './validated-input-wrapper'], function (exports, _validationErrorList, _validatedInputWrapper) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -13,12 +13,12 @@ define(['exports', './validation-error-list', './validated-input'], function (ex
       }
     });
   });
-  Object.keys(_validatedInput).forEach(function (key) {
+  Object.keys(_validatedInputWrapper).forEach(function (key) {
     if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
-        return _validatedInput[key];
+        return _validatedInputWrapper[key];
       }
     });
   });

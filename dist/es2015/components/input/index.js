@@ -1,2 +1,2 @@
 export * from './validation-error-list';
-export * from './validated-input';
+export * from './validated-input-wrapper';
