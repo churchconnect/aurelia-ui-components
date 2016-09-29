@@ -11,7 +11,8 @@ let components = {
         './components/list/index',
         './components/media/index',
         './components/map/index',
-        './components/input/index'
+        './components/input/index',
+        './components/flash/index'
     ]
 }
 
