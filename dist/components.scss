@@ -208,6 +208,68 @@ $card-vertical-spacing: em($large-spacing);
     }
 }
 
+@mixin flash($color) {
+    background-color: $color;
+    color: color(neutral, lightest);
+    display: block;
+    padding: $card-vertical-spacing $card-horizontal-spacing;
+    width: 100%;
+    box-sizing: border-box;
+
+    a {
+        color: darken($color, 70%);
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: darken($color, 90%);
+        }
+    }
+
+    .flash-close {
+        color: darken($color, 60%);
+
+        &:hover {
+            color: lighten(darken($color, 60%), 10%);
+        }
+    }
+}
+
+.flash {
+    @include transition(top .35s ease-in-out);
+    position: relative;
+
+    &.active {
+        @include transition(top .35s ease-in-out);
+
+        opacity: 1;
+    }
+}
+
+.flash-close {
+    color: #ef2160;
+    font-size: 1.4em;
+    position: absolute;
+    top: em(19px);
+    right: em(20px);
+
+    &:hover {
+        color: darken(#ef2160, 10%);
+    }
+}
+
+.flash-error {
+    @include flash(color(message, error));
+}
+
+.flash-warning {
+    @include flash(color(message, warning));
+}
+
+.flash-success {
+    @include flash(color(message, success));
+}
+
 input, textarea {
     width: 100%;
     box-sizing: border-box;
