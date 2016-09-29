@@ -75,7 +75,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
     var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
-    var PageHeader = exports.PageHeader = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="page-header" class.bind="image ? \'banner\' : \'\'" css.bind="myCss">\n        <h2 innerHtml.bind="title"></h2>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+    var PageHeader = exports.PageHeader = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="page-header" class.bind="image ? \'banner\' : \'\'" css.bind="css">\n        <h2 innerHtml.bind="title"></h2>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
         function PageHeader() {
             _classCallCheck(this, PageHeader);
 
@@ -85,7 +85,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         }
 
         _createClass(PageHeader, [{
-            key: 'myCss',
+            key: 'css',
             get: function get() {
                 return this.image ? 'background-image: url(' + this.image + ');' : '';
             }

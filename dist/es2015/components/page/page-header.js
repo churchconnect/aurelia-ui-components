@@ -47,7 +47,7 @@ import { inlineView, bindable, containerless } from 'aurelia-framework';
 
 export let PageHeader = (_dec = containerless(), _dec2 = inlineView(`
 <template>
-    <div class="page-header" class.bind="image ? 'banner' : ''" css.bind="myCss">
+    <div class="page-header" class.bind="image ? 'banner' : ''" css.bind="css">
         <h2 innerHtml.bind="title"></h2>
     </div>
 </template>
@@ -58,7 +58,7 @@ export let PageHeader = (_dec = containerless(), _dec2 = inlineView(`
         _initDefineProp(this, 'image', _descriptor2, this);
     }
 
-    get myCss() {
+    get css() {
         return this.image ? `background-image: url(${ this.image });` : '';
     }
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {

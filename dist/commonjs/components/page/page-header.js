@@ -56,7 +56,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var PageHeader = exports.PageHeader = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="page-header" class.bind="image ? \'banner\' : \'\'" css.bind="myCss">\n        <h2 innerHtml.bind="title"></h2>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+var PageHeader = exports.PageHeader = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="page-header" class.bind="image ? \'banner\' : \'\'" css.bind="css">\n        <h2 innerHtml.bind="title"></h2>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
     function PageHeader() {
         _classCallCheck(this, PageHeader);
 
@@ -66,7 +66,7 @@ var PageHeader = exports.PageHeader = (_dec = (0, _aureliaFramework.containerles
     }
 
     _createClass(PageHeader, [{
-        key: 'myCss',
+        key: 'css',
         get: function get() {
             return this.image ? 'background-image: url(' + this.image + ');' : '';
         }

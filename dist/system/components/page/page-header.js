@@ -79,7 +79,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
                 };
             }();
 
-            _export('PageHeader', PageHeader = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="page-header" class.bind="image ? \'banner\' : \'\'" css.bind="myCss">\n        <h2 innerHtml.bind="title"></h2>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+            _export('PageHeader', PageHeader = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="page-header" class.bind="image ? \'banner\' : \'\'" css.bind="css">\n        <h2 innerHtml.bind="title"></h2>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
                 function PageHeader() {
                     _classCallCheck(this, PageHeader);
 
@@ -89,7 +89,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
                 }
 
                 _createClass(PageHeader, [{
-                    key: 'myCss',
+                    key: 'css',
                     get: function get() {
                         return this.image ? 'background-image: url(' + this.image + ');' : '';
                     }
