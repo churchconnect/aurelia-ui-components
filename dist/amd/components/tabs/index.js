@@ -5,7 +5,7 @@ define(['exports', './tabs', './tab'], function (exports, _tabs, _tab) {
     value: true
   });
   Object.keys(_tabs).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -14,7 +14,7 @@ define(['exports', './tabs', './tab'], function (exports, _tabs, _tab) {
     });
   });
   Object.keys(_tab).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {

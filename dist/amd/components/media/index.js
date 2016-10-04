@@ -5,7 +5,7 @@ define(['exports', './image-embed', './video-embed', './slider', './slide', './r
     value: true
   });
   Object.keys(_imageEmbed).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -14,7 +14,7 @@ define(['exports', './image-embed', './video-embed', './slider', './slide', './r
     });
   });
   Object.keys(_videoEmbed).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -23,7 +23,7 @@ define(['exports', './image-embed', './video-embed', './slider', './slide', './r
     });
   });
   Object.keys(_slider).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -32,7 +32,7 @@ define(['exports', './image-embed', './video-embed', './slider', './slide', './r
     });
   });
   Object.keys(_slide).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -41,7 +41,7 @@ define(['exports', './image-embed', './video-embed', './slider', './slide', './r
     });
   });
   Object.keys(_responsiveIframe).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {

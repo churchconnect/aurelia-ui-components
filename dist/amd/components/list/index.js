@@ -5,7 +5,7 @@ define(['exports', './list', './list-item', './item-icon'], function (exports, _
     value: true
   });
   Object.keys(_list).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -14,7 +14,7 @@ define(['exports', './list', './list-item', './item-icon'], function (exports, _
     });
   });
   Object.keys(_listItem).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {
@@ -23,7 +23,7 @@ define(['exports', './list', './list-item', './item-icon'], function (exports, _
     });
   });
   Object.keys(_itemIcon).forEach(function (key) {
-    if (key === "default") return;
+    if (key === "default" || key === "__esModule") return;
     Object.defineProperty(exports, key, {
       enumerable: true,
       get: function () {

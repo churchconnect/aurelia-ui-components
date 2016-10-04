@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,17 +43,19 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+import { inlineView, bindable, containerless, inject } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
 
 export let Tab = (_dec = containerless(), _dec2 = inlineView(`
 <template>
-    <a class="tab-link" href.bind="href" class.bind="isActive ? 'active' : ''">
+    <a class="tab-link" href.bind="href" class.bind="isActive ? 'active' : ''" click.trigger="followLink()">
         <i class="fa" class.bind="icon ? 'fa-' + icon : ''"></i>
         <span class="tabbar-label" innerHtml.bind="label"></span>
     </a>
 </template>
-`), _dec(_class = _dec2(_class = (_class2 = class Tab {
-    constructor() {
+`), _dec3 = inject(Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class Tab {
+
+    constructor(router) {
         _initDefineProp(this, 'label', _descriptor, this);
 
         _initDefineProp(this, 'href', _descriptor2, this);
@@ -61,8 +63,13 @@ export let Tab = (_dec = containerless(), _dec2 = inlineView(`
         _initDefineProp(this, 'icon', _descriptor3, this);
 
         _initDefineProp(this, 'isActive', _descriptor4, this);
+
+        this.router = router;
     }
 
+    followLink() {
+        this.router.navigate(this.href);
+    }
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'label', [bindable], {
     enumerable: true,
     initializer: function () {
@@ -83,4 +90,4 @@ export let Tab = (_dec = containerless(), _dec2 = inlineView(`
     initializer: function () {
         return false;
     }
-})), _class2)) || _class) || _class);
+})), _class2)) || _class) || _class) || _class);

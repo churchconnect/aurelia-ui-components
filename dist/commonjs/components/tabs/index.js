@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var _tabs = require('./tabs');
 
 Object.keys(_tabs).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -19,7 +19,7 @@ Object.keys(_tabs).forEach(function (key) {
 var _tab = require('./tab');
 
 Object.keys(_tab).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {

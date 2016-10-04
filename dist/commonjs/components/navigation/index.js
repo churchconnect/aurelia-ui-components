@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 var _navigation = require('./navigation');
 
 Object.keys(_navigation).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
@@ -19,7 +19,7 @@ Object.keys(_navigation).forEach(function (key) {
 var _navigationLink = require('./navigation-link');
 
 Object.keys(_navigationLink).forEach(function (key) {
-  if (key === "default") return;
+  if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
