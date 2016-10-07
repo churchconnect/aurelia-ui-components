@@ -3,21 +3,54 @@ $card-vertical-spacing: em($large-spacing);
 
 .card {
     @include display(flex);
-    @include flex-direction(column);
+    @include flex-direction(row);
     @include align-items(center);
+    @include justify-content(space-between);
 
     box-shadow: 0 em(3px) em(6px) 0 rgba(0, 0, 0, .16);
     font-size: 1rem;
     margin: em($base-spacing) em($medium-spacing);
-    padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+    padding: 0;
 
-    &.full-height {
+    .card-arrow {
+        width: $card-horizontal-spacing;
+        font-size: $large-font-size;
+        color: color(neutral, darker);
+    }
+
+    .card-body {
+        @include display(flex);
+        @include flex-direction(column);
+        @include align-items(center);
+        @include flex-grow(1);
+
+        padding: 0 0 $card-vertical-spacing $card-horizontal-spacing;
+
+        p {
+            font-size: em($medium-font-size);
+            width: 100%;
+        }
+    }
+
+    &.full-height .card-body {
         padding-bottom: 0;
     }
 
-    p {
-        font-size: em($medium-font-size);
-        width: 100%;
+    &.arrow .card-body {
+        padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+    }
+
+    .page-body & {
+        margin-left: 0;
+        margin-right: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
