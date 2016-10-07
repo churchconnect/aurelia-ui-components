@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, Card;
+    var inlineView, bindable, containerless, _createClass, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, Card;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -61,13 +61,54 @@ System.register(['aurelia-framework'], function (_export, _context) {
             containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
-            _export('Card', Card = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card" class.bind="fullHeight ? \'full-height\' : \'\'">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function Card() {
-                _classCallCheck(this, Card);
+            _createClass = function () {
+                function defineProperties(target, props) {
+                    for (var i = 0; i < props.length; i++) {
+                        var descriptor = props[i];
+                        descriptor.enumerable = descriptor.enumerable || false;
+                        descriptor.configurable = true;
+                        if ("value" in descriptor) descriptor.writable = true;
+                        Object.defineProperty(target, descriptor.key, descriptor);
+                    }
+                }
 
-                _initDefineProp(this, 'fullHeight', _descriptor, this);
-            }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'fullHeight', [bindable], {
+                return function (Constructor, protoProps, staticProps) {
+                    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+                    if (staticProps) defineProperties(Constructor, staticProps);
+                    return Constructor;
+                };
+            }();
+
+            _export('Card', Card = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card" class.bind="cssClasses">\n        <div class="card-body">\n            <slot></slot>\n        </div>\n        <i if.bind="arrow" class="card-arrow fa" class.bind="arrowClass"></i>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+                function Card() {
+                    _classCallCheck(this, Card);
+
+                    _initDefineProp(this, 'fullHeight', _descriptor, this);
+
+                    _initDefineProp(this, 'arrow', _descriptor2, this);
+                }
+
+                _createClass(Card, [{
+                    key: 'cssClasses',
+                    get: function get() {
+                        return (this.fullHeight ? 'full-height' : '') + ' ' + (this.arrow ? 'arrow arrow-' + this.arrow : '');
+                    }
+                }, {
+                    key: 'arrowClass',
+                    get: function get() {
+                        return 'fa-arrow-' + this.arrow;
+                    }
+                }]);
+
+                return Card;
+            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'fullHeight', [bindable], {
                 enumerable: true,
                 initializer: null
+            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'arrow', [bindable], {
+                enumerable: true,
+                initializer: function initializer() {
+                    return '';
+                }
             })), _class2)) || _class) || _class));
 
             _export('Card', Card);

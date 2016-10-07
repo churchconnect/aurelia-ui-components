@@ -79,7 +79,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
             this.contentElement = document.getElementsByClassName(CONTENT_CLASS)[0];
 
-            this.contentElement.addEventListener('refresh', function () {
+            this.contentElement.addEventListener(REFRESH_EVENT, function () {
                 if (_this.refreshing) return;
 
                 _this.refreshing = true;

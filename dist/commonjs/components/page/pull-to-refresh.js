@@ -76,7 +76,7 @@ var PullToRefresh = exports.PullToRefresh = (_dec = (0, _aureliaFramework.contai
 
         this.contentElement = document.getElementsByClassName(CONTENT_CLASS)[0];
 
-        this.contentElement.addEventListener('refresh', function () {
+        this.contentElement.addEventListener(REFRESH_EVENT, function () {
             if (_this.refreshing) return;
 
             _this.refreshing = true;
