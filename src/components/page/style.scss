@@ -35,7 +35,7 @@
 }
 
 .page-body {
-    padding: $card-vertical-spacing $card-horizontal-spacing;
+    padding: em($large-spacing);
 
     button {
         width:100%;
@@ -45,7 +45,7 @@
 .page-message {
     width:100%;
     box-sizing: border-box;
-    padding: $card-vertical-spacing $card-horizontal-spacing;
+    padding: em($large-spacing);
     color: color(neutral, lightest);
 
     &.success {
