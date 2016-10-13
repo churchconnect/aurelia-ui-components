@@ -32,12 +32,12 @@ $card-vertical-spacing: em($large-spacing);
         }
     }
 
-    &.full-height .card-body {
-        padding-bottom: 0;
-    }
-
     &.arrow .card-body {
         padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+    }
+
+    &.full-height .card-body {
+        padding-bottom: 0;
     }
 
     .page-body & {
