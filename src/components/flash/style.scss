@@ -2,7 +2,7 @@
     background-color: $color;
     color: color(neutral, lightest);
     display: block;
-    padding: $card-vertical-spacing $card-horizontal-spacing;
+    padding: em($large-spacing);
     width: 90%;
     box-sizing: border-box;
     margin: 0 auto;

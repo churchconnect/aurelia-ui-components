@@ -103,21 +103,54 @@ $card-vertical-spacing: em($large-spacing);
 
 .card {
     @include display(flex);
-    @include flex-direction(column);
+    @include flex-direction(row);
     @include align-items(center);
+    @include justify-content(space-between);
 
     box-shadow: 0 em(3px) em(6px) 0 rgba(0, 0, 0, .16);
     font-size: 1rem;
     margin: em($base-spacing) em($medium-spacing);
-    padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+    padding: 0;
 
-    &.full-height {
+    .card-arrow {
+        width: $card-horizontal-spacing;
+        font-size: $large-font-size;
+        color: color(neutral, darker);
+    }
+
+    .card-body {
+        @include display(flex);
+        @include flex-direction(column);
+        @include align-items(center);
+        @include flex-grow(1);
+
+        padding: 0 0 $card-vertical-spacing $card-horizontal-spacing;
+
+        p {
+            font-size: em($medium-font-size);
+            width: 100%;
+        }
+    }
+
+    &.arrow .card-body {
+        padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+    }
+
+    &.full-height .card-body {
         padding-bottom: 0;
     }
 
-    p {
-        font-size: em($medium-font-size);
-        width: 100%;
+    .page-body & {
+        margin-left: 0;
+        margin-right: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -208,73 +241,6 @@ $card-vertical-spacing: em($large-spacing);
     }
 }
 
-@mixin flash($color) {
-    background-color: $color;
-    color: color(neutral, lightest);
-    display: block;
-    padding: $card-vertical-spacing $card-horizontal-spacing;
-    width: 90%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    opacity: 0.9;
-    border-radius: em($medium-spacing);
-    text-align: center;
-
-    a {
-        color: darken($color, 70%);
-        text-decoration: underline;
-
-        &:focus,
-        &:hover {
-            color: darken($color, 90%);
-        }
-    }
-
-    .flash-close {
-        color: darken($color, 60%);
-
-        &:hover {
-            color: lighten(darken($color, 60%), 10%);
-        }
-    }
-}
-
-.flash {
-    @include transition(top .35s ease-in-out);
-
-    position: absolute;
-    top: em(-112px);
-    left: 0;
-    width: 100%;
-    z-index: 500; /* may need to be higher */
-
-    &.active {
-        @include transition(top .35s ease-in-out);
-
-        opacity: 1;
-        top: em($large-spacing);
-    }
-}
-
-.flash-close {
-    font-size: 1.4em;
-    position: absolute;
-    top: em(19px);
-    right: em(20px);
-}
-
-.flash-error {
-    @include flash(color(message, error));
-}
-
-.flash-warning {
-    @include flash(color(message, warning));
-}
-
-.flash-success {
-    @include flash(color(message, success));
-}
-
 input, textarea {
     width: 100%;
     box-sizing: border-box;
@@ -304,7 +270,7 @@ label {
     }
 }
 
-.validated-input-wapper {
+.validated-input-wrapper {
     margin-bottom: em($large-spacing);
 
     input, textarea {
@@ -378,9 +344,194 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+@mixin flash($color) {
+    background-color: $color;
+    color: color(neutral, lightest);
+    display: block;
+    padding: em($large-spacing);
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    opacity: 0.9;
+    border-radius: em($medium-spacing);
+    text-align: center;
+
+    a {
+        color: darken($color, 70%);
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: darken($color, 90%);
+        }
+    }
+
+    .flash-close {
+        color: darken($color, 60%);
+
+        &:hover {
+            color: lighten(darken($color, 60%), 10%);
+        }
+    }
+}
+
+.flash {
+    @include transition(top .35s ease-in-out);
+
+    position: absolute;
+    top: em(-112px);
+    left: 0;
+    width: 100%;
+    z-index: 500; /* may need to be higher */
+
+    &.active {
+        @include transition(top .35s ease-in-out);
+
+        opacity: 1;
+        top: em($large-spacing);
+    }
+}
+
+.flash-close {
+    font-size: 1.4em;
+    position: absolute;
+    top: em(19px);
+    right: em(20px);
+}
+
+.flash-error {
+    @include flash(color(message, error));
+}
+
+.flash-warning {
+    @include flash(color(message, warning));
+}
+
+.flash-success {
+    @include flash(color(message, success));
+}
+
 .map {
     background: color(neutral, lighter);
     width: 100%;
+}
+
+.page-header {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(flex-end);
+
+    display: flex;
+    font-size: 1em;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+    width: 100%;
+
+    &:after {
+        display: none;
+    }
+
+    h2 {
+        width: 100%;
+        box-sizing: border-box;
+        color: color(neutral, lightest);
+        font-size: em($base-font-size);
+        padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
+        margin: 0;
+        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+    }
+
+    small {
+        color: color(neutral, base);
+        font-size: em($small-font-size);
+    }
+
+    &.banner {
+        min-height: $base-spacing * 7.5;
+    }
+}
+
+.page-body {
+    padding: em($large-spacing);
+
+    button {
+        width:100%;
+    }
+}
+
+.page-message {
+    width:100%;
+    box-sizing: border-box;
+    padding: em($large-spacing);
+    color: color(neutral, lightest);
+
+    &.success {
+        background: color(message, success);
+    }
+
+    &.error {
+        background: color(message, error);
+    }
+
+    &.warning {
+        background: color(message, warning);
+    }
+}
+
+.toolbar {
+    background: color(primary, base);
+    font-size: 1rem;
+
+    .toolbar-inner {
+        .tab-link {
+            color: color(neutral, lightest);
+            font-size: em($base-font-size);
+            padding: em(7px) 0;
+
+            i {
+                font-size: em($large-font-size);
+            }
+
+            span {
+                font-size: em($x-small-font-size);
+            }
+        }
+    }
+}
+
+.profile-summary {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+
+    font-size: 1rem;
+    height: em(182px);
+    margin: 0;
+
+    .profile-pic {
+        background-clip: content-box;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: em(4px) solid rgba(255, 255, 255, .28);
+        border-radius: 50%;
+        overflow: hidden;
+        width: em(100px);
+        height: em(100px);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .profile-name {
+        color: color(neutral, lightest);
+        font-size: em($large-font-size);
+        margin-top: em($x-small-spacing);
+    }
 }
 
 $full-width-additional-padding: em($large-spacing);
@@ -490,124 +641,6 @@ $full-width-additional-padding: em($large-spacing);
                         display: none;
                     }
                 }
-            }
-        }
-    }
-}
-
-.page-header {
-    @include flex-direction(column);
-    @include align-items(flex-start);
-    @include justify-content(flex-end);
-
-    display: flex;
-    font-size: 1em;
-    margin: 0;
-    min-height: 0;
-    padding: 0;
-    width: 100%;
-
-    &:after {
-        display: none;
-    }
-
-    h2 {
-        width: 100%;
-        box-sizing: border-box;
-        color: color(neutral, lightest);
-        font-size: em($base-font-size);
-        padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
-        margin: 0;
-        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-    }
-
-    small {
-        color: color(neutral, base);
-        font-size: em($small-font-size);
-    }
-
-    &.banner {
-        min-height: $base-spacing * 7.5;
-    }
-}
-
-.page-body {
-    padding: $card-vertical-spacing $card-horizontal-spacing;
-
-    button {
-        width:100%;
-    }
-}
-
-.page-message {
-    width:100%;
-    box-sizing: border-box;
-    padding: $card-vertical-spacing $card-horizontal-spacing;
-    color: color(neutral, lightest);
-
-    &.success {
-        background: color(message, success);
-    }
-
-    &.error {
-        background: color(message, error);
-    }
-
-    &.warning {
-        background: color(message, warning);
-    }
-}
-
-.profile-summary {
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
-    @include align-items(center);
-
-    font-size: 1rem;
-    height: em(182px);
-    margin: 0;
-
-    .profile-pic {
-        background-clip: content-box;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: em(4px) solid rgba(255, 255, 255, .28);
-        border-radius: 50%;
-        overflow: hidden;
-        width: em(100px);
-        height: em(100px);
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    .profile-name {
-        color: color(neutral, lightest);
-        font-size: em($large-font-size);
-        margin-top: em($x-small-spacing);
-    }
-}
-
-.toolbar {
-    background: color(primary, base);
-    font-size: 1rem;
-
-    .toolbar-inner {
-        .tab-link {
-            color: color(neutral, lightest);
-            font-size: em($base-font-size);
-            padding: em(7px) 0;
-
-            i {
-                font-size: em($large-font-size);
-            }
-
-            span {
-                font-size: em($x-small-font-size);
             }
         }
     }

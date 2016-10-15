@@ -28,7 +28,7 @@ export class PullToRefresh {
     attached() {
         this.contentElement = document.getElementsByClassName(CONTENT_CLASS)[0]
 
-        this.contentElement.addEventListener('refresh', () => {
+        this.contentElement.addEventListener(REFRESH_EVENT, () => {
             if (this.refreshing) return
 
             this.refreshing = true
