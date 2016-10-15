@@ -1,0 +1,44 @@
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px color(neutral, base);
+    border-radius: em($x-small-spacing);
+    padding: em($medium-spacing) em($small-spacing);
+    margin: 0 0 em($large-spacing);
+    font-size: em($medium-font-size);
+}
+
+textarea {
+    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 em($small-spacing) 0;
+}
+
+.has-error {
+    input, textarea {
+        border: solid 1px color(message, error);
+        @include placeholder {
+            color: color(message, error);
+            opacity: 0.7;
+        }
+    }
+}
+
+.validated-input-wapper {
+    margin-bottom: em($large-spacing);
+
+    input, textarea {
+        margin-bottom: 0;
+    }
+}
+
+ul.validation-error-list {
+    color: color(message, error);
+    list-style: none;
+    margin: em($small-spacing) 0;
+    padding: 0;
+    font-size: em($small-font-size);
+}

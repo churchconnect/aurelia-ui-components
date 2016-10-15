@@ -8,7 +8,7 @@ exports.configure = configure;
 var _config = require('./config');
 
 var components = {
-    card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index']
+    card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index', './components/input/index', './components/flash/index']
 };
 
 function configure(aurelia, configCallback) {

@@ -11,3 +11,10 @@
     @warn "Unknown `#{$palette}` in palettes.";
     @return null;
 }
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content }
+    &:-moz-placeholder { @content }
+    &::-moz-placeholder { @content }
+    &:-ms-input-placeholder { @content }
+}

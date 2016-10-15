@@ -1,7 +1,7 @@
 import { Config } from './config';
 
 let components = {
-    card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index']
+    card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index', './components/input/index', './components/flash/index']
 };
 
 export function configure(aurelia, configCallback, includes = []) {

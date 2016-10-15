@@ -1,6 +1,7 @@
 import {Config} from './config'
 
 let components = {
+    //TODO: this key seems meaningless at this point.
     card: [
         './components/card/index',
         './components/navigation/index',
@@ -10,6 +11,8 @@ let components = {
         './components/list/index',
         './components/media/index',
         './components/map/index',
+        './components/input/index',
+        './components/flash/index'
     ]
 }
 
