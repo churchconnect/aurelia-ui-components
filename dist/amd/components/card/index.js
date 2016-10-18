@@ -1,4 +1,4 @@
-define(['exports', './card', './card-header', './card-links', './card-actions', './card-input-amount'], function (exports, _card, _cardHeader, _cardLinks, _cardActions, _cardInputAmount) {
+define(['exports', './card', './card-header', './card-links', './card-actions', './card-input-amount', './arrow-card'], function (exports, _card, _cardHeader, _cardLinks, _cardActions, _cardInputAmount, _arrowCard) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -46,6 +46,15 @@ define(['exports', './card', './card-header', './card-links', './card-actions', 
       enumerable: true,
       get: function () {
         return _cardInputAmount[key];
+      }
+    });
+  });
+  Object.keys(_arrowCard).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function () {
+        return _arrowCard[key];
       }
     });
   });

@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -47,34 +47,16 @@ import { inlineView, bindable, containerless } from 'aurelia-framework';
 
 export let Card = (_dec = containerless(), _dec2 = inlineView(`
 <template>
-    <div class="card" class.bind="cssClasses">
-        <div class="card-body">
-            <slot></slot>
-        </div>
-        <i if.bind="arrow" class="card-arrow fa" class.bind="arrowClass"></i>
+    <div class="card" class.bind="fullHeight ? 'full-height' : ''">
+        <slot></slot>
     </div>
 </template>
 `), _dec(_class = _dec2(_class = (_class2 = class Card {
     constructor() {
         _initDefineProp(this, 'fullHeight', _descriptor, this);
-
-        _initDefineProp(this, 'arrow', _descriptor2, this);
-    }
-
-    get cssClasses() {
-        return `${ this.fullHeight ? 'full-height' : '' } ${ this.arrow ? `arrow arrow-${ this.arrow }` : '' }`;
-    }
-
-    get arrowClass() {
-        return `fa-arrow-${ this.arrow }`;
     }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'fullHeight', [bindable], {
     enumerable: true,
     initializer: null
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'arrow', [bindable], {
-    enumerable: true,
-    initializer: function () {
-        return '';
-    }
 })), _class2)) || _class) || _class);
