@@ -202,6 +202,12 @@ $card-vertical-spacing: em($large-spacing);
 
     margin-top: em($base-spacing);
     width: 100%;
+
+    a {
+        text-transform: uppercase;
+        font-size: em($medium-font-size);
+        color: color(primary,base);
+    }
 }
 
 .card-actions {
@@ -256,69 +262,6 @@ $card-vertical-spacing: em($large-spacing);
             display: none;
         }
     }
-}
-
-$list-item-vertical-spacing: em($medium-spacing);
-$list-item-horizontal-spacing: em($base-spacing);
-$full-width-additional-padding: em($large-spacing);
-
-.list-block {
-    font-size: 1em;
-    width: 100%;
-
-    &.full-width {
-        @include calc(width, "100% + #{$full-width-additional-padding * 2}")
-    }
-
-    li:nth-child(even) {
-        background: color(neutral, lighter);
-    }
-
-    .item-content {
-        padding: $list-item-vertical-spacing $list-item-horizontal-spacing;
-    }
-
-    .item-inner {
-        padding: 0;
-
-        &:after {
-            display: none;
-        }
-    }
-
-    .item-title {
-        p {
-            margin: 0;
-        }
-
-        small {
-            color: color(neutral, base);
-            font-size: em($medium-font-size);
-        }
-    }
-
-    [slot="after-content"] {
-        @include display(flex);
-    }
-
-    .item-media {
-        font-size: em($large-font-size);
-        margin-left: em($medium-spacing, $large-font-size);
-        padding: 0;
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        .fa-spotify:before {
-            color: color(social, spotify);
-        }
-    }
-}
-
-.map {
-    background: color(neutral, lighter);
-    width: 100%;
 }
 
 @mixin flash($color) {
@@ -388,6 +331,64 @@ $full-width-additional-padding: em($large-spacing);
     @include flash(color(message, success));
 }
 
+$list-item-vertical-spacing: em($medium-spacing);
+$list-item-horizontal-spacing: em($base-spacing);
+$full-width-additional-padding: em($large-spacing);
+
+.list-block {
+    font-size: 1em;
+    width: 100%;
+
+    &.full-width {
+        @include calc(width, "100% + #{$full-width-additional-padding * 2}")
+    }
+
+    li:nth-child(even) {
+        background: color(neutral, lighter);
+    }
+
+    .item-content {
+        padding: $list-item-vertical-spacing $list-item-horizontal-spacing;
+    }
+
+    .item-inner {
+        padding: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .item-title {
+        p {
+            margin: 0;
+        }
+
+        small {
+            color: color(neutral, base);
+            font-size: em($medium-font-size);
+        }
+    }
+
+    [slot="after-content"] {
+        @include display(flex);
+    }
+
+    .item-media {
+        font-size: em($large-font-size);
+        margin-left: em($medium-spacing, $large-font-size);
+        padding: 0;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        .fa-spotify:before {
+            color: color(social, spotify);
+        }
+    }
+}
+
 input, textarea {
     width: 100%;
     box-sizing: border-box;
@@ -433,136 +434,9 @@ ul.validation-error-list {
     font-size: em($small-font-size);
 }
 
-.page-header {
-    @include flex-direction(column);
-    @include align-items(flex-start);
-    @include justify-content(flex-end);
-
-    display: flex;
-    font-size: 1em;
-    margin: 0;
-    min-height: 0;
-    padding: 0;
+.map {
+    background: color(neutral, lighter);
     width: 100%;
-
-    &:after {
-        display: none;
-    }
-
-    h2 {
-        width: 100%;
-        box-sizing: border-box;
-        color: color(neutral, lightest);
-        font-size: em($base-font-size);
-        padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
-        margin: 0;
-        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-    }
-
-    small {
-        color: color(neutral, base);
-        font-size: em($small-font-size);
-    }
-
-    &.banner {
-        min-height: $base-spacing * 7.5;
-    }
-
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.page-body {
-    padding: em($large-spacing);
-
-    button {
-        width: 100%;
-    }
-}
-
-.page-message {
-    width: 100%;
-    box-sizing: border-box;
-    padding: em($large-spacing);
-    color: color(neutral, lightest);
-
-    &.success {
-        background: color(message, success);
-    }
-
-    &.error {
-        background: color(message, error);
-    }
-
-    &.warning {
-        background: color(message, warning);
-    }
-}
-
-.panel {
-    background: #1a1a1a;
-    font-size: 1rem;
-    width: 88%;
-
-    .list-block {
-        margin: 0;
-
-        ul {
-            background: none;
-
-            &:before,
-            &:after {
-                display: none;
-            }
-
-            li {
-                background: transparent;
-                color: color(primary, dark);
-                padding-left: em($x-large-spacing);
-                transition: background $base-duration $base-timing, color $base-duration $base-timing;
-
-                &.active {
-                    background: color(primary, darker);
-                    color: color(neutral, lightest);
-                }
-
-                .item-media {
-                    font-size: em($large-font-size);
-                }
-
-                .item-inner {
-                    margin-left: em($x-large-spacing);
-                    padding: em($medium-spacing * 1.2) 0;
-
-                    &:after {
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.toolbar {
-    background: color(primary, base);
-    font-size: 1rem;
-
-    .toolbar-inner {
-        .tab-link {
-            color: color(neutral, lightest);
-            font-size: em($base-font-size);
-            padding: em(7px) 0;
-
-            i {
-                font-size: em($large-font-size);
-            }
-
-            span {
-                font-size: em($x-small-font-size);
-            }
-        }
-    }
 }
 
 $full-width-additional-padding: em($large-spacing);
@@ -633,6 +507,117 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+.panel {
+    background: #1a1a1a;
+    font-size: 1rem;
+    width: 88%;
+
+    .list-block {
+        margin: 0;
+
+        ul {
+            background: none;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+
+            li {
+                background: transparent;
+                color: color(primary, dark);
+                padding-left: em($x-large-spacing);
+                transition: background $base-duration $base-timing, color $base-duration $base-timing;
+
+                &.active {
+                    background: color(primary, darker);
+                    color: color(neutral, lightest);
+                }
+
+                .item-media {
+                    font-size: em($large-font-size);
+                }
+
+                .item-inner {
+                    margin-left: em($x-large-spacing);
+                    padding: em($medium-spacing * 1.2) 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-header {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(flex-end);
+
+    display: flex;
+    font-size: 1em;
+    margin: 0;
+    min-height: 0;
+    padding: 0;
+    width: 100%;
+
+    &:after {
+        display: none;
+    }
+
+    h2 {
+        width: 100%;
+        box-sizing: border-box;
+        color: color(neutral, lightest);
+        font-size: em($base-font-size);
+        padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
+        margin: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    }
+
+    small {
+        color: color(neutral, base);
+        font-size: em($small-font-size);
+    }
+
+    &.banner {
+        min-height: $base-spacing * 7.5;
+    }
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-body {
+    padding: em($large-spacing);
+
+    button {
+        width: 100%;
+    }
+}
+
+.page-message {
+    width: 100%;
+    box-sizing: border-box;
+    padding: em($large-spacing);
+    color: color(neutral, lightest);
+
+    &.success {
+        background: color(message, success);
+    }
+
+    &.error {
+        background: color(message, error);
+    }
+
+    &.warning {
+        background: color(message, warning);
+    }
+}
+
 .profile-summary {
     @include display(flex);
     @include flex-direction(column);
@@ -664,5 +649,26 @@ $full-width-additional-padding: em($large-spacing);
         color: color(neutral, lightest);
         font-size: em($large-font-size);
         margin-top: em($x-small-spacing);
+    }
+}
+
+.toolbar {
+    background: color(primary, base);
+    font-size: 1rem;
+
+    .toolbar-inner {
+        .tab-link {
+            color: color(neutral, lightest);
+            font-size: em($base-font-size);
+            padding: em(7px) 0;
+
+            i {
+                font-size: em($large-font-size);
+            }
+
+            span {
+                font-size: em($x-small-font-size);
+            }
+        }
     }
 }

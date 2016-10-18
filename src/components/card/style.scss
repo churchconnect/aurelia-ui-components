@@ -102,6 +102,12 @@ $card-vertical-spacing: em($large-spacing);
 
     margin-top: em($base-spacing);
     width: 100%;
+
+    a {
+        text-transform: uppercase;
+        font-size: em($medium-font-size);
+        color: color(primary,base);
+    }
 }
 
 .card-actions {
