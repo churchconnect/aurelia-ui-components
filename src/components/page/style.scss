@@ -21,7 +21,7 @@
         font-size: em($base-font-size);
         padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
         margin: 0;
-        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
     }
 
     small {
@@ -32,18 +32,22 @@
     &.banner {
         min-height: $base-spacing * 7.5;
     }
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .page-body {
     padding: em($large-spacing);
 
     button {
-        width:100%;
+        width: 100%;
     }
 }
 
 .page-message {
-    width:100%;
+    width: 100%;
     box-sizing: border-box;
     padding: em($large-spacing);
     color: color(neutral, lightest);

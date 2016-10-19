@@ -103,6 +103,39 @@ $card-vertical-spacing: em($large-spacing);
 
 .card {
     @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+
+    box-shadow: 0 em(3px) em(6px) 0 rgba(0, 0, 0, .16);
+    font-size: 1rem;
+    margin: em($base-spacing) em($medium-spacing);
+    padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+
+    &.full-height {
+        padding-bottom: 0;
+    }
+
+    p {
+        font-size: em($medium-font-size);
+        width: 100%;
+    }
+
+    .page-body & {
+        margin-left: 0;
+        margin-right: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.arrow-card {
+    @include display(flex);
     @include flex-direction(row);
     @include align-items(center);
     @include justify-content(space-between);
@@ -124,7 +157,7 @@ $card-vertical-spacing: em($large-spacing);
         @include align-items(center);
         @include flex-grow(1);
 
-        padding: 0 0 $card-vertical-spacing $card-horizontal-spacing;
+        padding: 0 0 0 $card-horizontal-spacing;
 
         p {
             font-size: em($medium-font-size);
@@ -136,22 +169,6 @@ $card-vertical-spacing: em($large-spacing);
         padding: 0 $card-horizontal-spacing $card-vertical-spacing;
     }
 
-    &.full-height .card-body {
-        padding-bottom: 0;
-    }
-
-    .page-body & {
-        margin-left: 0;
-        margin-right: 0;
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
 }
 
 .card-header {
@@ -185,6 +202,12 @@ $card-vertical-spacing: em($large-spacing);
 
     margin-top: em($base-spacing);
     width: 100%;
+
+    a {
+        text-transform: uppercase;
+        font-size: em($medium-font-size);
+        color: color(primary,base);
+    }
 }
 
 .card-actions {
@@ -551,7 +574,7 @@ $full-width-additional-padding: em($large-spacing);
         font-size: em($base-font-size);
         padding: em($x-large-spacing) $card-horizontal-spacing em($small-spacing);
         margin: 0;
-        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
     }
 
     small {
@@ -562,18 +585,22 @@ $full-width-additional-padding: em($large-spacing);
     &.banner {
         min-height: $base-spacing * 7.5;
     }
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .page-body {
     padding: em($large-spacing);
 
     button {
-        width:100%;
+        width: 100%;
     }
 }
 
 .page-message {
-    width:100%;
+    width: 100%;
     box-sizing: border-box;
     padding: em($large-spacing);
     color: color(neutral, lightest);
