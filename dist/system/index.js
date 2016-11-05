@@ -24,7 +24,7 @@ System.register(['./config'], function (_export, _context) {
         }],
         execute: function () {
             components = {
-                card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index', './components/input/index', './components/flash/index']
+                card: ['./components/card/index', './components/navigation/index', './components/tabs/index', './components/page/index', './components/profile/index', './components/list/index', './components/media/index', './components/map/index', './components/input/index', './components/flash/index', './components/loading-indicator/loading-indicator']
             };
         }
     };

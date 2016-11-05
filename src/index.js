@@ -1,4 +1,4 @@
-import {Config} from './config'
+import {Config} from "./config";
 
 let components = {
     //TODO: this key seems meaningless at this point.
@@ -12,11 +12,12 @@ let components = {
         './components/media/index',
         './components/map/index',
         './components/input/index',
-        './components/flash/index'
+        './components/flash/index',
+        './components/loading-indicator/loading-indicator'
     ]
 }
 
-export function configure(aurelia, configCallback, includes=[]) {
+export function configure(aurelia, configCallback, includes = []) {
     configCallback(aurelia.container.get(Config))
 
     if (!includes.length) includes = Object.keys(components)
