@@ -146,7 +146,7 @@ $card-vertical-spacing: em($large-spacing);
     padding: 0;
 
     .card-arrow {
-        width: $card-horizontal-spacing;
+        margin: em($small-spacing);
         font-size: $large-font-size;
         color: color(neutral, darker);
     }
@@ -157,18 +157,23 @@ $card-vertical-spacing: em($large-spacing);
         @include align-items(center);
         @include flex-grow(1);
 
-        padding: 0 0 0 $card-horizontal-spacing;
+        padding: $card-vertical-spacing 0 $card-vertical-spacing $card-horizontal-spacing;
 
         p {
             font-size: em($medium-font-size);
             width: 100%;
         }
+
+        .one-line-card-content {
+            width: 100%;
+            margin: em(-$small-spacing) 0;
+        }
+
     }
 
-    &.arrow .card-body {
-        padding: 0 $card-horizontal-spacing $card-vertical-spacing;
+    .card-header {
+        padding: 0;
     }
-
 }
 
 .card-header {
@@ -176,7 +181,7 @@ $card-vertical-spacing: em($large-spacing);
     @include align-items(flex-start);
 
     font-size: 1em;
-    margin: 0 0 em($large-spacing) 0;
+    margin: 0 0 em($medium-spacing) 0;
     min-height: 0;
     padding: $card-vertical-spacing 0 0 0;
     width: 100%;
@@ -206,7 +211,7 @@ $card-vertical-spacing: em($large-spacing);
     a {
         text-transform: uppercase;
         font-size: em($medium-font-size);
-        color: color(primary,base);
+        color: color(primary, base);
     }
 }
 
