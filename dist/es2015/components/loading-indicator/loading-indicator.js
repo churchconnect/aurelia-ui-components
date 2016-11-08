@@ -27,14 +27,12 @@ export let LoadingIndicator = (_dec = containerless(), _dec2 = inject(EventAggre
     }
 
     addRequest(req) {
-        console.log('calling add request.');
         if (!this.requests.length) this.showLoading();
 
         this.requests.push(req);
     }
 
     removeRequest() {
-        console.log('calling remove request.');
         if (!this.requests.length) return;
 
         this.requests.pop();

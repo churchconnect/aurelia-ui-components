@@ -35,14 +35,12 @@ define(["exports", "aurelia-framework", "aurelia-event-aggregator"], function (e
         }
 
         LoadingIndicator.prototype.addRequest = function addRequest(req) {
-            console.log('calling add request.');
             if (!this.requests.length) this.showLoading();
 
             this.requests.push(req);
         };
 
         LoadingIndicator.prototype.removeRequest = function removeRequest() {
-            console.log('calling remove request.');
             if (!this.requests.length) return;
 
             this.requests.pop();
