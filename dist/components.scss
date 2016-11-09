@@ -82,6 +82,22 @@ $base-border: 1px solid $base-border-color !default;
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
 
+button {
+    background: color(primary, base);
+    border: none;
+    border-radius: $base-border-radius;
+    color: color(neutral, lightest);
+    cursor: pointer;
+    font-size: em($medium-font-size);
+    outline: none;
+    padding: em($small-spacing) 0;
+    text-transform: uppercase;
+
+    &:active {
+        background: darken(color(primary, base), 10%);
+    }
+}
+
 $card-horizontal-spacing: em($large-spacing);
 $card-vertical-spacing: em($large-spacing);
 
@@ -251,6 +267,73 @@ $card-vertical-spacing: em($large-spacing);
             display: none;
         }
     }
+}
+
+@mixin flash($color) {
+    background-color: $color;
+    color: color(neutral, lightest);
+    display: block;
+    padding: em($large-spacing);
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    opacity: 0.9;
+    border-radius: em($medium-spacing);
+    text-align: center;
+
+    a {
+        color: darken($color, 70%);
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: darken($color, 90%);
+        }
+    }
+
+    .flash-close {
+        color: darken($color, 60%);
+
+        &:hover {
+            color: lighten(darken($color, 60%), 10%);
+        }
+    }
+}
+
+.flash {
+    @include transition(top .35s ease-in-out);
+
+    position: absolute;
+    top: em(-112px);
+    left: 0;
+    width: 100%;
+    z-index: 500; /* may need to be higher */
+
+    &.active {
+        @include transition(top .35s ease-in-out);
+
+        opacity: 1;
+        top: em($large-spacing);
+    }
+}
+
+.flash-close {
+    font-size: 1.4em;
+    position: absolute;
+    top: em(19px);
+    right: em(20px);
+}
+
+.flash-error {
+    @include flash(color(message, error));
+}
+
+.flash-warning {
+    @include flash(color(message, warning));
+}
+
+.flash-success {
+    @include flash(color(message, success));
 }
 
 input, textarea {
@@ -637,87 +720,4 @@ $full-width-additional-padding: em($large-spacing);
             }
         }
     }
-}
-
-button {
-    background: color(primary, base);
-    border: none;
-    border-radius: $base-border-radius;
-    color: color(neutral, lightest);
-    cursor: pointer;
-    font-size: em($medium-font-size);
-    outline: none;
-    padding: em($small-spacing) 0;
-    text-transform: uppercase;
-
-    &:active {
-        background: darken(color(primary, base), 10%);
-    }
-}
-
-@mixin flash($color) {
-    background-color: $color;
-    color: color(neutral, lightest);
-    display: block;
-    padding: em($large-spacing);
-    width: 90%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    opacity: 0.9;
-    border-radius: em($medium-spacing);
-    text-align: center;
-
-    a {
-        color: darken($color, 70%);
-        text-decoration: underline;
-
-        &:focus,
-        &:hover {
-            color: darken($color, 90%);
-        }
-    }
-
-    .flash-close {
-        color: darken($color, 60%);
-
-        &:hover {
-            color: lighten(darken($color, 60%), 10%);
-        }
-    }
-}
-
-.flash {
-    @include transition(top .35s ease-in-out);
-
-    position: absolute;
-    top: em(-112px);
-    left: 0;
-    width: 100%;
-    z-index: 500; /* may need to be higher */
-
-    &.active {
-        @include transition(top .35s ease-in-out);
-
-        opacity: 1;
-        top: em($large-spacing);
-    }
-}
-
-.flash-close {
-    font-size: 1.4em;
-    position: absolute;
-    top: em(19px);
-    right: em(20px);
-}
-
-.flash-error {
-    @include flash(color(message, error));
-}
-
-.flash-warning {
-    @include flash(color(message, warning));
-}
-
-.flash-success {
-    @include flash(color(message, success));
 }
