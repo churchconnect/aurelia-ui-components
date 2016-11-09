@@ -43,8 +43,8 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless, inject } from 'aurelia-framework';
-import { Router } from 'aurelia-router';
+import { inlineView, bindable, containerless, inject } from "aurelia-framework";
+import { Router } from "aurelia-router";
 
 export let NavigationLink = (_dec = containerless(), _dec2 = inlineView(`
 <template>
@@ -61,37 +61,41 @@ export let NavigationLink = (_dec = containerless(), _dec2 = inlineView(`
 `), _dec3 = inject(Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class NavigationLink {
 
     constructor(router) {
-        _initDefineProp(this, 'title', _descriptor, this);
+        _initDefineProp(this, "title", _descriptor, this);
 
-        _initDefineProp(this, 'href', _descriptor2, this);
+        _initDefineProp(this, "href", _descriptor2, this);
 
-        _initDefineProp(this, 'isActive', _descriptor3, this);
+        _initDefineProp(this, "isActive", _descriptor3, this);
 
-        _initDefineProp(this, 'icon', _descriptor4, this);
+        _initDefineProp(this, "icon", _descriptor4, this);
 
         this.router = router;
     }
 
     followLink() {
-        this.router.navigate(this.href);
+        if (this.href.substring(0, 4).toLowerCase() === 'http') {
+            window.open(this.href, '_system');
+        } else {
+            this.router.navigate(this.href);
+        }
     }
 
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {
+}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [bindable], {
     enumerable: true,
     initializer: function () {
         return '';
     }
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'href', [bindable], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "href", [bindable], {
     enumerable: true,
     initializer: function () {
         return '';
     }
-}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'isActive', [bindable], {
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isActive", [bindable], {
     enumerable: true,
     initializer: function () {
         return false;
     }
-}), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'icon', [bindable], {
+}), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "icon", [bindable], {
     enumerable: true,
     initializer: function () {
         return '';

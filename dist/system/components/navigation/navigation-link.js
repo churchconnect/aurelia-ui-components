@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-System.register(['aurelia-framework', 'aurelia-router'], function (_export, _context) {
+System.register(["aurelia-framework", "aurelia-router"], function (_export, _context) {
     "use strict";
 
     var inlineView, bindable, containerless, inject, Router, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, NavigationLink;
@@ -64,49 +64,53 @@ System.register(['aurelia-framework', 'aurelia-router'], function (_export, _con
             Router = _aureliaRouter.Router;
         }],
         execute: function () {
-            _export('NavigationLink', NavigationLink = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <li class="item-content" class.bind="isActive ? \'active\' : \'\'" click.trigger="followLink()">\n        <div class="item-media">\n            <i class="fa" class.bind="icon ? \'fa-\' + icon : \'\'"></i>\n        </div>\n\n        <div class="item-inner">\n            <div class="item-title" innerHtml.bind="title"></div>\n        </div>\n    </li>\n</template>\n'), _dec3 = inject(Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+            _export("NavigationLink", NavigationLink = (_dec = containerless(), _dec2 = inlineView("\n<template>\n    <li class=\"item-content\" class.bind=\"isActive ? 'active' : ''\" click.trigger=\"followLink()\">\n        <div class=\"item-media\">\n            <i class=\"fa\" class.bind=\"icon ? 'fa-' + icon : ''\"></i>\n        </div>\n\n        <div class=\"item-inner\">\n            <div class=\"item-title\" innerHtml.bind=\"title\"></div>\n        </div>\n    </li>\n</template>\n"), _dec3 = inject(Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function NavigationLink(router) {
                     _classCallCheck(this, NavigationLink);
 
-                    _initDefineProp(this, 'title', _descriptor, this);
+                    _initDefineProp(this, "title", _descriptor, this);
 
-                    _initDefineProp(this, 'href', _descriptor2, this);
+                    _initDefineProp(this, "href", _descriptor2, this);
 
-                    _initDefineProp(this, 'isActive', _descriptor3, this);
+                    _initDefineProp(this, "isActive", _descriptor3, this);
 
-                    _initDefineProp(this, 'icon', _descriptor4, this);
+                    _initDefineProp(this, "icon", _descriptor4, this);
 
                     this.router = router;
                 }
 
                 NavigationLink.prototype.followLink = function followLink() {
-                    this.router.navigate(this.href);
+                    if (this.href.substring(0, 4).toLowerCase() === 'http') {
+                        window.open(this.href, '_system');
+                    } else {
+                        this.router.navigate(this.href);
+                    }
                 };
 
                 return NavigationLink;
-            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {
+            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return '';
                 }
-            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'href', [bindable], {
+            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "href", [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return '';
                 }
-            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'isActive', [bindable], {
+            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isActive", [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return false;
                 }
-            }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'icon', [bindable], {
+            }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "icon", [bindable], {
                 enumerable: true,
                 initializer: function initializer() {
                     return '';
                 }
             })), _class2)) || _class) || _class) || _class));
 
-            _export('NavigationLink', NavigationLink);
+            _export("NavigationLink", NavigationLink);
         }
     };
 });

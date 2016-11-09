@@ -1,5 +1,5 @@
-define(['exports', 'aurelia-framework', 'aurelia-router'], function (exports, _aureliaFramework, _aureliaRouter) {
-    'use strict';
+define(["exports", "aurelia-framework", "aurelia-router"], function (exports, _aureliaFramework, _aureliaRouter) {
+    "use strict";
 
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -57,42 +57,46 @@ define(['exports', 'aurelia-framework', 'aurelia-router'], function (exports, _a
 
     var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
 
-    var NavigationLink = exports.NavigationLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <li class="item-content" class.bind="isActive ? \'active\' : \'\'" click.trigger="followLink()">\n        <div class="item-media">\n            <i class="fa" class.bind="icon ? \'fa-\' + icon : \'\'"></i>\n        </div>\n\n        <div class="item-inner">\n            <div class="item-title" innerHtml.bind="title"></div>\n        </div>\n    </li>\n</template>\n'), _dec3 = (0, _aureliaFramework.inject)(_aureliaRouter.Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+    var NavigationLink = exports.NavigationLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)("\n<template>\n    <li class=\"item-content\" class.bind=\"isActive ? 'active' : ''\" click.trigger=\"followLink()\">\n        <div class=\"item-media\">\n            <i class=\"fa\" class.bind=\"icon ? 'fa-' + icon : ''\"></i>\n        </div>\n\n        <div class=\"item-inner\">\n            <div class=\"item-title\" innerHtml.bind=\"title\"></div>\n        </div>\n    </li>\n</template>\n"), _dec3 = (0, _aureliaFramework.inject)(_aureliaRouter.Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
         function NavigationLink(router) {
             _classCallCheck(this, NavigationLink);
 
-            _initDefineProp(this, 'title', _descriptor, this);
+            _initDefineProp(this, "title", _descriptor, this);
 
-            _initDefineProp(this, 'href', _descriptor2, this);
+            _initDefineProp(this, "href", _descriptor2, this);
 
-            _initDefineProp(this, 'isActive', _descriptor3, this);
+            _initDefineProp(this, "isActive", _descriptor3, this);
 
-            _initDefineProp(this, 'icon', _descriptor4, this);
+            _initDefineProp(this, "icon", _descriptor4, this);
 
             this.router = router;
         }
 
         NavigationLink.prototype.followLink = function followLink() {
-            this.router.navigate(this.href);
+            if (this.href.substring(0, 4).toLowerCase() === 'http') {
+                window.open(this.href, '_system');
+            } else {
+                this.router.navigate(this.href);
+            }
         };
 
         return NavigationLink;
-    }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [_aureliaFramework.bindable], {
+    }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return '';
         }
-    }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'href', [_aureliaFramework.bindable], {
+    }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "href", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return '';
         }
-    }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'isActive', [_aureliaFramework.bindable], {
+    }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isActive", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return false;
         }
-    }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'icon', [_aureliaFramework.bindable], {
+    }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "icon", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return '';

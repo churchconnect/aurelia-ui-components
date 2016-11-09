@@ -1,5 +1,5 @@
-import {inlineView, bindable, containerless, inject} from 'aurelia-framework'
-import {Router} from 'aurelia-router'
+import {inlineView, bindable, containerless, inject} from "aurelia-framework";
+import {Router} from "aurelia-router";
 
 @containerless()
 @inlineView(`
@@ -28,7 +28,11 @@ export class NavigationLink {
     }
 
     followLink() {
-        this.router.navigate(this.href)
+        if (this.href.substring(0, 4).toLowerCase() === 'http') {
+            window.open(this.href, '_system')
+        } else {
+            this.router.navigate(this.href)
+        }
     }
 
 }
