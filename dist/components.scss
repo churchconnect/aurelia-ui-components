@@ -336,51 +336,6 @@ $card-vertical-spacing: em($large-spacing);
     @include flash(color(message, success));
 }
 
-input, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    border: solid 1px color(neutral, base);
-    border-radius: em($x-small-spacing);
-    padding: em($medium-spacing) em($small-spacing);
-    margin: 0 0 em($large-spacing);
-    font-size: em($medium-font-size);
-}
-
-textarea {
-    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
-}
-
-label {
-    display: inline-block;
-    margin: 0 0 em($small-spacing) 0;
-}
-
-.has-error {
-    input, textarea {
-        border: solid 1px color(message, error);
-        @include placeholder {
-            color: color(message, error);
-            opacity: 0.7;
-        }
-    }
-}
-
-.validated-input-wrapper {
-    margin-bottom: em($large-spacing);
-
-    input, textarea {
-        margin-bottom: 0;
-    }
-}
-
-ul.validation-error-list {
-    color: color(message, error);
-    list-style: none;
-    margin: em($small-spacing) 0;
-    padding: 0;
-    font-size: em($small-font-size);
-}
-
 $list-item-vertical-spacing: em($medium-spacing);
 $list-item-horizontal-spacing: em($base-spacing);
 $full-width-additional-padding: em($large-spacing);
@@ -481,6 +436,51 @@ $full-width-additional-padding: em($large-spacing);
     &--indicator {
         @include animation(rotate .75s linear infinite);
     }
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px color(neutral, base);
+    border-radius: em($x-small-spacing);
+    padding: em($medium-spacing) em($small-spacing);
+    margin: 0 0 em($large-spacing);
+    font-size: em($medium-font-size);
+}
+
+textarea {
+    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 em($small-spacing) 0;
+}
+
+.has-error {
+    input, textarea {
+        border: solid 1px color(message, error);
+        @include placeholder {
+            color: color(message, error);
+            opacity: 0.7;
+        }
+    }
+}
+
+.validated-input-wrapper {
+    margin-bottom: em($large-spacing);
+
+    input, textarea {
+        margin-bottom: 0;
+    }
+}
+
+ul.validation-error-list {
+    color: color(message, error);
+    list-style: none;
+    margin: em($small-spacing) 0;
+    padding: 0;
+    font-size: em($small-font-size);
 }
 
 .map {
@@ -667,6 +667,27 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+.toolbar {
+    background: color(primary, base);
+    font-size: 1rem;
+
+    .toolbar-inner {
+        .tab-link {
+            color: color(neutral, lightest);
+            font-size: em($base-font-size);
+            padding: em(7px) 0;
+
+            i {
+                font-size: em($large-font-size);
+            }
+
+            span {
+                font-size: em($x-small-font-size);
+            }
+        }
+    }
+}
+
 .profile-summary {
     @include display(flex);
     @include flex-direction(column);
@@ -698,26 +719,5 @@ $full-width-additional-padding: em($large-spacing);
         color: color(neutral, lightest);
         font-size: em($large-font-size);
         margin-top: em($x-small-spacing);
-    }
-}
-
-.toolbar {
-    background: color(primary, base);
-    font-size: 1rem;
-
-    .toolbar-inner {
-        .tab-link {
-            color: color(neutral, lightest);
-            font-size: em($base-font-size);
-            padding: em(7px) 0;
-
-            i {
-                font-size: em($large-font-size);
-            }
-
-            span {
-                font-size: em($x-small-font-size);
-            }
-        }
     }
 }

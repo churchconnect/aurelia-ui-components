@@ -1,16 +1,18 @@
-import {inlineView, bindable, containerless} from 'aurelia-framework'
+import {inlineView, bindable, containerless, inject} from "aurelia-framework";
+import {Router} from "aurelia-router";
 
 @containerless()
 @inlineView(`
 <template>
     <li>
         <div class="item-content">
+        <!--<div class="item-content external" click.trigger="titleLink ? followLink() : ''">-->
             <item-icon icon.bind="icon" if.bind="icon"></item-icon>
 
             <div class="item-inner">
                 <div class="item-title">
                     <p>
-                        <a href.bind="titleLink" innerHtml.bind="title" if.bind="titleLink" target="_blank"></a>
+                        <a href.bind="titleLink" innerHtml.bind="title" if.bind="titleLink" class.bind="noAjax ? 'external' : ''" target.bind="target"></a>
                         <span innerHtml.bind="title" if.bind="!titleLink"></span>
                     </p>
 
@@ -25,11 +27,27 @@ import {inlineView, bindable, containerless} from 'aurelia-framework'
     </li>
 </template>
 `)
+@inject(Router)
 export class ListItem {
 
     @bindable icon
     @bindable title
     @bindable titleLink
     @bindable subtitle
+    @bindable target = '_self'
+    @bindable noAjax = false //tells framework 7 not to use ajax
+
+    constructor(router) {
+        this.router = router
+    }
+
+    //TODO: will this cause problems with some routes? Should we change it to look for 'http', 'mail', or 'tel:'?
+    followLink() {
+        if (this.titleLink.substring(0, 2).toLowerCase() === '#/') {
+            this.router.navigate(this.titleLink)
+        } else {
+            window.location.href = this.titleLink
+        }
+    }
 
 }

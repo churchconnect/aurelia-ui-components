@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,18 +43,20 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+import { inlineView, bindable, containerless, inject } from "aurelia-framework";
+import { Router } from "aurelia-router";
 
 export let ListItem = (_dec = containerless(), _dec2 = inlineView(`
 <template>
     <li>
         <div class="item-content">
+        <!--<div class="item-content external" click.trigger="titleLink ? followLink() : ''">-->
             <item-icon icon.bind="icon" if.bind="icon"></item-icon>
 
             <div class="item-inner">
                 <div class="item-title">
                     <p>
-                        <a href.bind="titleLink" innerHtml.bind="title" if.bind="titleLink" target="_blank"></a>
+                        <a href.bind="titleLink" innerHtml.bind="title" if.bind="titleLink" class.bind="noAjax ? 'external' : ''" target.bind="target"></a>
                         <span innerHtml.bind="title" if.bind="!titleLink"></span>
                     </p>
 
@@ -68,27 +70,52 @@ export let ListItem = (_dec = containerless(), _dec2 = inlineView(`
         </div>
     </li>
 </template>
-`), _dec(_class = _dec2(_class = (_class2 = class ListItem {
-    constructor() {
-        _initDefineProp(this, 'icon', _descriptor, this);
+`), _dec3 = inject(Router), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class ListItem {
 
-        _initDefineProp(this, 'title', _descriptor2, this);
+    constructor(router) {
+        _initDefineProp(this, "icon", _descriptor, this);
 
-        _initDefineProp(this, 'titleLink', _descriptor3, this);
+        _initDefineProp(this, "title", _descriptor2, this);
 
-        _initDefineProp(this, 'subtitle', _descriptor4, this);
+        _initDefineProp(this, "titleLink", _descriptor3, this);
+
+        _initDefineProp(this, "subtitle", _descriptor4, this);
+
+        _initDefineProp(this, "target", _descriptor5, this);
+
+        _initDefineProp(this, "noAjax", _descriptor6, this);
+
+        this.router = router;
     }
 
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'icon', [bindable], {
+    followLink() {
+        if (this.titleLink.substring(0, 2).toLowerCase() === '#/') {
+            this.router.navigate(this.titleLink);
+        } else {
+            window.location.href = this.titleLink;
+        }
+    }
+
+}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "icon", [bindable], {
     enumerable: true,
     initializer: null
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "title", [bindable], {
     enumerable: true,
     initializer: null
-}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'titleLink', [bindable], {
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "titleLink", [bindable], {
     enumerable: true,
     initializer: null
-}), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'subtitle', [bindable], {
+}), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "subtitle", [bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class) || _class);
+}), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "target", [bindable], {
+    enumerable: true,
+    initializer: function () {
+        return '_self';
+    }
+}), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "noAjax", [bindable], {
+    enumerable: true,
+    initializer: function () {
+        return false;
+    }
+})), _class2)) || _class) || _class) || _class);
