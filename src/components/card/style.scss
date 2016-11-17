@@ -168,3 +168,10 @@ $card-vertical-spacing: em($large-spacing);
         }
     }
 }
+
+.card .share-link {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    color: color(social, link);
+}
