@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./card', './card-header', './card-links', './card-actions', './card-input-amount', './arrow-card'], function (_export, _context) {
+System.register(['./card', './card-header', './card-links', './card-actions', './card-input-amount', './arrow-card', './share-link'], function (_export, _context) {
   "use strict";
 
   return {
@@ -52,6 +52,14 @@ System.register(['./card', './card-header', './card-links', './card-actions', '.
       }
 
       _export(_exportObj6);
+    }, function (_shareLink) {
+      var _exportObj7 = {};
+
+      for (var _key7 in _shareLink) {
+        if (_key7 !== "default" && _key7 !== "__esModule") _exportObj7[_key7] = _shareLink[_key7];
+      }
+
+      _export(_exportObj7);
     }],
     execute: function () {}
   };
