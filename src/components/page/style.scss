@@ -70,7 +70,7 @@
 }
 
 .page-footer {
-    padding: em($large-spacing);
+    padding: em($x-small-spacing) em($large-spacing);
     position: fixed;
     bottom: 50px;
     width: 100%;
