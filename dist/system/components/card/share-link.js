@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, PageBody;
+    var inlineView, containerless, bindable, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, ShareLink;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -57,22 +57,48 @@ System.register(['aurelia-framework'], function (_export, _context) {
     return {
         setters: [function (_aureliaFramework) {
             inlineView = _aureliaFramework.inlineView;
-            bindable = _aureliaFramework.bindable;
             containerless = _aureliaFramework.containerless;
+            bindable = _aureliaFramework.bindable;
         }],
         execute: function () {
-            _export('PageBody', PageBody = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="page-body" class.bind="hasFooter ? \'has-footer\' : \'\'">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function PageBody() {
-                _classCallCheck(this, PageBody);
+            _export('ShareLink', ShareLink = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+                function ShareLink() {
+                    _classCallCheck(this, ShareLink);
 
-                _initDefineProp(this, 'hasFooter', _descriptor, this);
-            }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'hasFooter', [bindable], {
-                enumerable: true,
-                initializer: function initializer() {
-                    return false;
+                    _initDefineProp(this, 'sharingInfo', _descriptor, this);
                 }
+
+                ShareLink.prototype.share = function share() {
+                    if (typeof cordova === 'undefined') {
+                        console.log('running outside of cordova: sharing disabled');
+                        console.log(this.sharingInfo);
+                    } else {
+                        var options = {
+                            message: this.sharingInfo.message,
+                            subject: this.sharingInfo.title,
+                            url: this.sharingInfo.link
+                        };
+
+                        var onSuccess = function onSuccess(result) {
+                            console.log("Share completed? " + result.completed);
+                            console.log("Shared to app: " + result.app);
+                        };
+
+                        var onError = function onError(msg) {
+                            console.log("Sharing failed with message: " + msg);
+                        };
+
+                        window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+                    }
+                };
+
+                return ShareLink;
+            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'sharingInfo', [bindable], {
+                enumerable: true,
+                initializer: null
             })), _class2)) || _class) || _class));
 
-            _export('PageBody', PageBody);
+            _export('ShareLink', ShareLink);
         }
     };
 });

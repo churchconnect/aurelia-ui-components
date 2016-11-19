@@ -75,3 +75,15 @@ Object.keys(_arrowCard).forEach(function (key) {
     }
   });
 });
+
+var _shareLink = require('./share-link');
+
+Object.keys(_shareLink).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _shareLink[key];
+    }
+  });
+});

@@ -4,7 +4,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.PageBody = undefined;
+    exports.ShareLink = undefined;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -57,14 +57,40 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
     var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
 
-    var PageBody = exports.PageBody = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="page-body" class.bind="hasFooter ? \'has-footer\' : \'\'">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function PageBody() {
-        _classCallCheck(this, PageBody);
+    var ShareLink = exports.ShareLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+        function ShareLink() {
+            _classCallCheck(this, ShareLink);
 
-        _initDefineProp(this, 'hasFooter', _descriptor, this);
-    }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'hasFooter', [_aureliaFramework.bindable], {
-        enumerable: true,
-        initializer: function initializer() {
-            return false;
+            _initDefineProp(this, 'sharingInfo', _descriptor, this);
         }
+
+        ShareLink.prototype.share = function share() {
+            if (typeof cordova === 'undefined') {
+                console.log('running outside of cordova: sharing disabled');
+                console.log(this.sharingInfo);
+            } else {
+                var options = {
+                    message: this.sharingInfo.message,
+                    subject: this.sharingInfo.title,
+                    url: this.sharingInfo.link
+                };
+
+                var onSuccess = function onSuccess(result) {
+                    console.log("Share completed? " + result.completed);
+                    console.log("Shared to app: " + result.app);
+                };
+
+                var onError = function onError(msg) {
+                    console.log("Sharing failed with message: " + msg);
+                };
+
+                window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+            }
+        };
+
+        return ShareLink;
+    }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'sharingInfo', [_aureliaFramework.bindable], {
+        enumerable: true,
+        initializer: null
     })), _class2)) || _class) || _class);
 });

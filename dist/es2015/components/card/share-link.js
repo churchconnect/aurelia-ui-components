@@ -43,22 +43,42 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+import { inlineView, containerless, bindable } from 'aurelia-framework';
 
-export let PageBody = (_dec = containerless(), _dec2 = inlineView(`
+export let ShareLink = (_dec = containerless(), _dec2 = inlineView(`
 <template>
-    <div class="page-body" class.bind="hasFooter ? 'has-footer' : ''">
-        <slot></slot>
-    </div>
+    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>
 </template>
-`), _dec(_class = _dec2(_class = (_class2 = class PageBody {
+`), _dec(_class = _dec2(_class = (_class2 = class ShareLink {
     constructor() {
-        _initDefineProp(this, 'hasFooter', _descriptor, this);
+        _initDefineProp(this, 'sharingInfo', _descriptor, this);
     }
 
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'hasFooter', [bindable], {
-    enumerable: true,
-    initializer: function () {
-        return false;
+    share() {
+        if (typeof cordova === 'undefined') {
+            console.log('running outside of cordova: sharing disabled');
+            console.log(this.sharingInfo);
+        } else {
+            var options = {
+                message: this.sharingInfo.message,
+                subject: this.sharingInfo.title,
+                url: this.sharingInfo.link
+            };
+
+            var onSuccess = function (result) {
+                console.log("Share completed? " + result.completed);
+                console.log("Shared to app: " + result.app);
+            };
+
+            var onError = function (msg) {
+                console.log("Sharing failed with message: " + msg);
+            };
+
+            window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+        }
     }
+
+}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'sharingInfo', [bindable], {
+    enumerable: true,
+    initializer: null
 })), _class2)) || _class) || _class);

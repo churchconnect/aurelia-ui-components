@@ -44,6 +44,10 @@
     button {
         width: 100%;
     }
+
+    .has-footer {
+        padding-bottom: em($large-spacing) + em(100px);
+    }
 }
 
 .page-message {
@@ -63,4 +67,28 @@
     &.warning {
         background: color(message, warning);
     }
+}
+
+.page-footer {
+    padding: em($x-small-spacing) em($large-spacing);
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    background: color(neutral, lightest);
+    box-shadow: 0 em(6px) em(10px) em(6px) rgba(0, 0, 0, .16);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+        background: none;
+        color: color(neutral, dark);
+        text-transform: uppercase;
+    }
+
+    .share-link {
+        color: color(neutral, dark);
+    }
+
 }
