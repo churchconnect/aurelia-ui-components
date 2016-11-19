@@ -39,3 +39,15 @@ Object.keys(_pageBody).forEach(function (key) {
     }
   });
 });
+
+var _pageFooter = require('./page-footer');
+
+Object.keys(_pageFooter).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _pageFooter[key];
+    }
+  });
+});

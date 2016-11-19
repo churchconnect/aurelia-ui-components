@@ -59,6 +59,11 @@ export let ShareLink = (_dec = containerless(), _dec2 = inlineView(`
             console.log('running outside of cordova: sharing disabled');
             console.log(this.sharingInfo);
         } else {
+            var options = {
+                message: this.sharingInfo.message,
+                subject: this.sharingInfo.title,
+                url: this.sharingInfo.link
+            };
 
             var onSuccess = function (result) {
                 console.log("Share completed? " + result.completed);
@@ -69,7 +74,7 @@ export let ShareLink = (_dec = containerless(), _dec2 = inlineView(`
                 console.log("Sharing failed with message: " + msg);
             };
 
-            window.plugins.socialsharing.shareWithOptions(this.sharingInfo, onSuccess, onError);
+            window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
         }
     }
 

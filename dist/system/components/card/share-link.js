@@ -73,6 +73,11 @@ System.register(['aurelia-framework'], function (_export, _context) {
                         console.log('running outside of cordova: sharing disabled');
                         console.log(this.sharingInfo);
                     } else {
+                        var options = {
+                            message: this.sharingInfo.message,
+                            subject: this.sharingInfo.title,
+                            url: this.sharingInfo.link
+                        };
 
                         var onSuccess = function onSuccess(result) {
                             console.log("Share completed? " + result.completed);
@@ -83,7 +88,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
                             console.log("Sharing failed with message: " + msg);
                         };
 
-                        window.plugins.socialsharing.shareWithOptions(this.sharingInfo, onSuccess, onError);
+                        window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
                     }
                 };
 

@@ -83,118 +83,6 @@ $base-border: 1px solid $base-border-color !default;
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
 
-input, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    border: solid 1px color(neutral, base);
-    border-radius: em($x-small-spacing);
-    padding: em($medium-spacing) em($small-spacing);
-    margin: 0 0 em($large-spacing);
-    font-size: em($medium-font-size);
-}
-
-textarea {
-    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
-}
-
-label {
-    display: inline-block;
-    margin: 0 0 em($small-spacing) 0;
-}
-
-.has-error {
-    input, textarea {
-        border: solid 1px color(message, error);
-        @include placeholder {
-            color: color(message, error);
-            opacity: 0.7;
-        }
-    }
-}
-
-.validated-input-wrapper {
-    margin-bottom: em($large-spacing);
-
-    input, textarea {
-        margin-bottom: 0;
-    }
-}
-
-ul.validation-error-list {
-    color: color(message, error);
-    list-style: none;
-    margin: em($small-spacing) 0;
-    padding: 0;
-    font-size: em($small-font-size);
-}
-
-@mixin flash($color) {
-    background-color: $color;
-    color: color(neutral, lightest);
-    display: block;
-    padding: em($large-spacing);
-    width: 90%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    opacity: 0.9;
-    border-radius: em($medium-spacing);
-    text-align: center;
-
-    a {
-        color: darken($color, 70%);
-        text-decoration: underline;
-
-        &:focus,
-        &:hover {
-            color: darken($color, 90%);
-        }
-    }
-
-    .flash-close {
-        color: darken($color, 60%);
-
-        &:hover {
-            color: lighten(darken($color, 60%), 10%);
-        }
-    }
-}
-
-.flash {
-    @include transition(top .35s ease-in-out);
-
-    position: absolute;
-    top: em(-112px);
-    left: 0;
-    width: 100%;
-    z-index: 500; /* may need to be higher */
-
-    &.active {
-        @include transition(top .35s ease-in-out);
-
-        opacity: 1;
-        top: em($large-spacing);
-    }
-}
-
-.flash-close {
-    font-size: 1.4em;
-    position: absolute;
-    top: em(19px);
-    right: em(20px);
-}
-
-.flash-error {
-    @include flash(color(message, error));
-}
-
-.flash-warning {
-    @include flash(color(message, warning));
-}
-
-.flash-success {
-    @include flash(color(message, success));
-}
-
 button {
     background: color(primary, base);
     border: none;
@@ -389,9 +277,116 @@ $card-vertical-spacing: em($large-spacing);
     color: color(social, link);
 }
 
-.map {
-    background: color(neutral, lighter);
+@mixin flash($color) {
+    background-color: $color;
+    color: color(neutral, lightest);
+    display: block;
+    padding: em($large-spacing);
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    opacity: 0.9;
+    border-radius: em($medium-spacing);
+    text-align: center;
+
+    a {
+        color: darken($color, 70%);
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: darken($color, 90%);
+        }
+    }
+
+    .flash-close {
+        color: darken($color, 60%);
+
+        &:hover {
+            color: lighten(darken($color, 60%), 10%);
+        }
+    }
+}
+
+.flash {
+    @include transition(top .35s ease-in-out);
+
+    position: absolute;
+    top: em(-112px);
+    left: 0;
     width: 100%;
+    z-index: 500; /* may need to be higher */
+
+    &.active {
+        @include transition(top .35s ease-in-out);
+
+        opacity: 1;
+        top: em($large-spacing);
+    }
+}
+
+.flash-close {
+    font-size: 1.4em;
+    position: absolute;
+    top: em(19px);
+    right: em(20px);
+}
+
+.flash-error {
+    @include flash(color(message, error));
+}
+
+.flash-warning {
+    @include flash(color(message, warning));
+}
+
+.flash-success {
+    @include flash(color(message, success));
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px color(neutral, base);
+    border-radius: em($x-small-spacing);
+    padding: em($medium-spacing) em($small-spacing);
+    margin: 0 0 em($large-spacing);
+    font-size: em($medium-font-size);
+}
+
+textarea {
+    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 em($small-spacing) 0;
+}
+
+.has-error {
+    input, textarea {
+        border: solid 1px color(message, error);
+        @include placeholder {
+            color: color(message, error);
+            opacity: 0.7;
+        }
+    }
+}
+
+.validated-input-wrapper {
+    margin-bottom: em($large-spacing);
+
+    input, textarea {
+        margin-bottom: 0;
+    }
+}
+
+ul.validation-error-list {
+    color: color(message, error);
+    list-style: none;
+    margin: em($small-spacing) 0;
+    padding: 0;
+    font-size: em($small-font-size);
 }
 
 $list-item-vertical-spacing: em($medium-spacing);
@@ -564,40 +559,6 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
-.profile-summary {
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
-    @include align-items(center);
-
-    font-size: 1rem;
-    height: em(182px);
-    margin: 0;
-
-    .profile-pic {
-        background-clip: content-box;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border: em(4px) solid rgba(255, 255, 255, .28);
-        border-radius: 50%;
-        overflow: hidden;
-        width: em(100px);
-        height: em(100px);
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    .profile-name {
-        color: color(neutral, lightest);
-        font-size: em($large-font-size);
-        margin-top: em($x-small-spacing);
-    }
-}
-
 .panel {
     background: #1a1a1a;
     font-size: 1rem;
@@ -642,24 +603,42 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
-.toolbar {
-    background: color(primary, base);
+.map {
+    background: color(neutral, lighter);
+    width: 100%;
+}
+
+.profile-summary {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+
     font-size: 1rem;
+    height: em(182px);
+    margin: 0;
 
-    .toolbar-inner {
-        .tab-link {
-            color: color(neutral, lightest);
-            font-size: em($base-font-size);
-            padding: em(7px) 0;
+    .profile-pic {
+        background-clip: content-box;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: em(4px) solid rgba(255, 255, 255, .28);
+        border-radius: 50%;
+        overflow: hidden;
+        width: em(100px);
+        height: em(100px);
 
-            i {
-                font-size: em($large-font-size);
-            }
-
-            span {
-                font-size: em($x-small-font-size);
-            }
+        img {
+            width: 100%;
+            height: auto;
         }
+    }
+
+    .profile-name {
+        color: color(neutral, lightest);
+        font-size: em($large-font-size);
+        margin-top: em($x-small-spacing);
     }
 }
 
@@ -709,6 +688,10 @@ $full-width-additional-padding: em($large-spacing);
     button {
         width: 100%;
     }
+
+    .has-footer {
+        padding-bottom: em($large-spacing) + em(100px);
+    }
 }
 
 .page-message {
@@ -727,5 +710,50 @@ $full-width-additional-padding: em($large-spacing);
 
     &.warning {
         background: color(message, warning);
+    }
+}
+
+.page-footer {
+    padding: em($large-spacing);
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    background: color(neutral, lightest);
+    box-shadow: 0 em(6px) em(10px) em(6px) rgba(0, 0, 0, .16);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+        background: none;
+        color: color(neutral, dark);
+        text-transform: uppercase;
+    }
+
+    .share-link {
+        color: color(neutral, dark);
+    }
+
+}
+
+.toolbar {
+    background: color(primary, base);
+    font-size: 1rem;
+
+    .toolbar-inner {
+        .tab-link {
+            color: color(neutral, lightest);
+            font-size: em($base-font-size);
+            padding: em(7px) 0;
+
+            i {
+                font-size: em($large-font-size);
+            }
+
+            span {
+                font-size: em($x-small-font-size);
+            }
+        }
     }
 }
