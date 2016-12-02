@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 @function color($palette, $tone: 'base') {
     @if map-has-key($palettes, $palette) {
         @if map-has-key(map-get($palettes, $palette), $tone) {
@@ -18,6 +25,13 @@
     &::-moz-placeholder { @content }
     &:-ms-input-placeholder { @content }
 }
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
 
 /* application variables */
 $palettes: (
@@ -83,6 +97,13 @@ $base-border: 1px solid $base-border-color !default;
 $heading-font-family: $base-font-family !default;
 $heading-line-height: 1.2 !default;
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 button {
     background: color(primary, base);
     border: none;
@@ -98,6 +119,13 @@ button {
         background: darken(color(primary, base), 10%);
     }
 }
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
 
 $card-horizontal-spacing: em($large-spacing);
 $card-vertical-spacing: em($large-spacing);
@@ -277,6 +305,13 @@ $card-vertical-spacing: em($large-spacing);
     color: color(social, link);
 }
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 @mixin flash($color) {
     background-color: $color;
     color: color(neutral, lightest);
@@ -344,6 +379,13 @@ $card-vertical-spacing: em($large-spacing);
     @include flash(color(message, success));
 }
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 input, textarea {
     width: 100%;
     box-sizing: border-box;
@@ -388,6 +430,13 @@ ul.validation-error-list {
     padding: 0;
     font-size: em($small-font-size);
 }
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
 
 $list-item-vertical-spacing: em($medium-spacing);
 $list-item-horizontal-spacing: em($base-spacing);
@@ -447,6 +496,13 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 @include keyframes(rotate) {
     from {
         @include transform(rotate(0deg));
@@ -491,10 +547,24 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 .map {
     background: color(neutral, lighter);
     width: 100%;
 }
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
 
 $full-width-additional-padding: em($large-spacing);
 
@@ -564,6 +634,13 @@ $full-width-additional-padding: em($large-spacing);
     }
 }
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 .panel {
     background: #1a1a1a;
     font-size: 1rem;
@@ -607,6 +684,13 @@ $full-width-additional-padding: em($large-spacing);
         }
     }
 }
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
 
 .page-header {
     @include flex-direction(column);
@@ -703,6 +787,13 @@ $full-width-additional-padding: em($large-spacing);
 
 }
 
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 .profile-summary {
     @include display(flex);
     @include flex-direction(column);
@@ -736,6 +827,13 @@ $full-width-additional-padding: em($large-spacing);
         margin-top: em($x-small-spacing);
     }
 }
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
 
 .toolbar {
     background: color(primary, base);

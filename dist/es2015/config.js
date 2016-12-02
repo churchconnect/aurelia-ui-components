@@ -1,3 +1,5 @@
+
+
 export let Config = class Config {
 
     registerF7Instance(f7) {

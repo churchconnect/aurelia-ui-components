@@ -1,3 +1,5 @@
+
+
 module.exports.generateRandomId = function () {
     return getRandomString(5) + Date.now();
 };
