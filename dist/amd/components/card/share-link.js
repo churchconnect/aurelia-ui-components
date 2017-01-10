@@ -57,7 +57,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
 
     var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
 
-    var ShareLink = exports.ShareLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+    var ShareLink = exports.ShareLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="share-link" click.delegate="share()">\n        <i class="fa fa-share-alt" aria-hidden="true" ></i>\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
         function ShareLink() {
             _classCallCheck(this, ShareLink);
 

@@ -47,7 +47,10 @@ import { inlineView, containerless, bindable } from 'aurelia-framework';
 
 export let ShareLink = (_dec = containerless(), _dec2 = inlineView(`
 <template>
-    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>
+    <div class="share-link" click.delegate="share()">
+        <i class="fa fa-share-alt" aria-hidden="true" ></i>
+        <slot></slot>
+    </div>
 </template>
 `), _dec(_class = _dec2(_class = (_class2 = class ShareLink {
     constructor() {

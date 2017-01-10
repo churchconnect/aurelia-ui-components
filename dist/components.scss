@@ -386,58 +386,6 @@ $card-vertical-spacing: em($large-spacing);
  * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
  */
 
-input, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    border: solid 1px color(neutral, base);
-    border-radius: em($x-small-spacing);
-    padding: em($medium-spacing) em($small-spacing);
-    margin: 0 0 em($large-spacing);
-    font-size: em($medium-font-size);
-}
-
-textarea {
-    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
-}
-
-label {
-    display: inline-block;
-    margin: 0 0 em($small-spacing) 0;
-}
-
-.has-error {
-    input, textarea {
-        border: solid 1px color(message, error);
-        @include placeholder {
-            color: color(message, error);
-            opacity: 0.7;
-        }
-    }
-}
-
-.validated-input-wrapper {
-    margin-bottom: em($large-spacing);
-
-    input, textarea {
-        margin-bottom: 0;
-    }
-}
-
-ul.validation-error-list {
-    color: color(message, error);
-    list-style: none;
-    margin: em($small-spacing) 0;
-    padding: 0;
-    font-size: em($small-font-size);
-}
-
-/*
- * Copyright (c) 2016 by SharpTop Software, LLC
- * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
- * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
- * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
- */
-
 $list-item-vertical-spacing: em($medium-spacing);
 $list-item-horizontal-spacing: em($base-spacing);
 $full-width-additional-padding: em($large-spacing);
@@ -503,6 +451,58 @@ $full-width-additional-padding: em($large-spacing);
  * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
  */
 
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px color(neutral, base);
+    border-radius: em($x-small-spacing);
+    padding: em($medium-spacing) em($small-spacing);
+    margin: 0 0 em($large-spacing);
+    font-size: em($medium-font-size);
+}
+
+textarea {
+    vertical-align: top; /* to prevent random browser added whitespace -- http://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 em($small-spacing) 0;
+}
+
+.has-error {
+    input, textarea {
+        border: solid 1px color(message, error);
+        @include placeholder {
+            color: color(message, error);
+            opacity: 0.7;
+        }
+    }
+}
+
+.validated-input-wrapper {
+    margin-bottom: em($large-spacing);
+
+    input, textarea {
+        margin-bottom: 0;
+    }
+}
+
+ul.validation-error-list {
+    color: color(message, error);
+    list-style: none;
+    margin: em($small-spacing) 0;
+    padding: 0;
+    font-size: em($small-font-size);
+}
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
 @include keyframes(rotate) {
     from {
         @include transform(rotate(0deg));
@@ -544,93 +544,6 @@ $full-width-additional-padding: em($large-spacing);
 
     &--indicator {
         @include animation(rotate .75s linear infinite);
-    }
-}
-
-/*
- * Copyright (c) 2016 by SharpTop Software, LLC
- * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
- * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
- * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
- */
-
-.map {
-    background: color(neutral, lighter);
-    width: 100%;
-}
-
-/*
- * Copyright (c) 2016 by SharpTop Software, LLC
- * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
- * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
- * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
- */
-
-$full-width-additional-padding: em($large-spacing);
-
-.image,
-.video {
-    background: color(neutral, lighter);
-    width: 100%;
-
-    &.full-width {
-        @include calc(width, "100% + #{$full-width-additional-padding * 2}");
-
-        position: relative;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-.swiper-container {
-    font-size: 1rem;
-    padding-bottom: 0;
-
-    &.has-pagination {
-        padding-bottom: em($base-spacing);
-    }
-
-    &.full-width {
-        width: 100%;
-    }
-}
-
-.swiper-pagination {
-    bottom: em($x-small-spacing);
-}
-
-.swiper-pagination-bullet {
-    background: lighten(color(neutral, darkest), 10%);
-    transition: background $base-duration $base-timing;
-
-    &.swiper-pagination-bullet-active {
-        background: color(neutral, darkest);
-    }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-
-    background: none;
-    color: color(neutral, lightest);
-}
-
-.swiper-slide {
-    width: 100%;
-
-    & > img {
-        width: 100%;
-        height: auto;
-    }
-
-    .card {
-        margin-top: 0;
     }
 }
 
@@ -785,6 +698,93 @@ $full-width-additional-padding: em($large-spacing);
         color: color(neutral, dark);
     }
 
+}
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
+.map {
+    background: color(neutral, lighter);
+    width: 100%;
+}
+
+/*
+ * Copyright (c) 2016 by SharpTop Software, LLC
+ * All rights reserved. No part of this software project may be used, reproduced, distributed, or transmitted in any
+ * form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior
+ * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
+ */
+
+$full-width-additional-padding: em($large-spacing);
+
+.image,
+.video {
+    background: color(neutral, lighter);
+    width: 100%;
+
+    &.full-width {
+        @include calc(width, "100% + #{$full-width-additional-padding * 2}");
+
+        position: relative;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.swiper-container {
+    font-size: 1rem;
+    padding-bottom: 0;
+
+    &.has-pagination {
+        padding-bottom: em($base-spacing);
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.swiper-pagination {
+    bottom: em($x-small-spacing);
+}
+
+.swiper-pagination-bullet {
+    background: lighten(color(neutral, darkest), 10%);
+    transition: background $base-duration $base-timing;
+
+    &.swiper-pagination-bullet-active {
+        background: color(neutral, darkest);
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
+    background: none;
+    color: color(neutral, lightest);
+}
+
+.swiper-slide {
+    width: 100%;
+
+    & > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        margin-top: 0;
+    }
 }
 
 /*

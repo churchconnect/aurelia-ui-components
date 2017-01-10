@@ -54,7 +54,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var ShareLink = exports.ShareLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+var ShareLink = exports.ShareLink = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="share-link" click.delegate="share()">\n        <i class="fa fa-share-alt" aria-hidden="true" ></i>\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
     function ShareLink() {
         _classCallCheck(this, ShareLink);
 

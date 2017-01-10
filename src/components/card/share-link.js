@@ -10,7 +10,10 @@ import {inlineView, containerless, bindable} from 'aurelia-framework'
 @containerless()
 @inlineView(`
 <template>
-    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>
+    <div class="share-link" click.delegate="share()">
+        <i class="fa fa-share-alt" aria-hidden="true" ></i>
+        <slot></slot>
+    </div>
 </template>
 `)
 export class ShareLink {

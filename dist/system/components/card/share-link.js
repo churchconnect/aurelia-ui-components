@@ -61,7 +61,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
             bindable = _aureliaFramework.bindable;
         }],
         execute: function () {
-            _export('ShareLink', ShareLink = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <i class="fa fa-share-alt share-link" aria-hidden="true" click.delegate="share()"></i>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
+            _export('ShareLink', ShareLink = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="share-link" click.delegate="share()">\n        <i class="fa fa-share-alt" aria-hidden="true" ></i>\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function () {
                 function ShareLink() {
                     _classCallCheck(this, ShareLink);
 
