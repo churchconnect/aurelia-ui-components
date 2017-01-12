@@ -112,8 +112,7 @@ System.register(['aurelia-framework', '../../utils/random', '../../config'], fun
                         nextButton: '#' + this.id + ' .swiper-button-next',
                         prevButton: '#' + this.id + ' .swiper-button-prev',
                         loop: this.loop,
-                        speed: Number(this.speed),
-                        autoplayDisableOnInteraction: false
+                        speed: Number(this.speed)
                     };
 
                     if (this.autoplay) swiperOptions.autoplay = this.autoplay;
