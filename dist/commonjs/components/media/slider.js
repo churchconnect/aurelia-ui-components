@@ -7,7 +7,7 @@ exports.Slider = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
 
 var _aureliaFramework = require('aurelia-framework');
 
@@ -72,19 +72,29 @@ var Slider = exports.Slider = (_dec = (0, _aureliaFramework.containerless)(), _d
 
         _initDefineProp(this, 'fullWidth', _descriptor4, this);
 
+        _initDefineProp(this, 'autoplay', _descriptor5, this);
+
+        _initDefineProp(this, 'speed', _descriptor6, this);
+
         this.id = 'swiper-' + (0, _random.generateRandomId)();
         this.config = config;
     }
 
     Slider.prototype.attached = function attached() {
-        this.swiper = this.config.f7.swiper('#' + this.id, {
+        var swiperOptions = {
             pagination: '#' + this.id + ' .swiper-pagination',
             spaceBetween: 0,
             paginationClickable: true,
             nextButton: '#' + this.id + ' .swiper-button-next',
             prevButton: '#' + this.id + ' .swiper-button-prev',
-            loop: this.loop
-        });
+            loop: this.loop,
+            speed: Number(this.speed),
+            autoplayDisableOnInteraction: false
+        };
+
+        if (this.autoplay) swiperOptions.autoplay = this.autoplay;
+
+        this.swiper = this.config.f7.swiper('#' + this.id, swiperOptions);
 
         if (this.slides.length <= 1) this.showControls = false;
     };
@@ -135,5 +145,15 @@ var Slider = exports.Slider = (_dec = (0, _aureliaFramework.containerless)(), _d
     enumerable: true,
     initializer: function initializer() {
         return false;
+    }
+}), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, 'autoplay', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+        return 0;
+    }
+}), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, 'speed', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: function initializer() {
+        return 500;
     }
 })), _class2)) || _class) || _class) || _class);

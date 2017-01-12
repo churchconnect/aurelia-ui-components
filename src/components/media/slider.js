@@ -35,6 +35,8 @@ export class Slider {
     @bindable showControls = false
     @bindable loop = false
     @bindable fullWidth = false
+    @bindable autoplay = 0
+    @bindable speed = 500
 
     constructor(config) {
         this.id = `swiper-${generateRandomId()}`
@@ -61,14 +63,20 @@ export class Slider {
     }
 
     attached() {
-        this.swiper = this.config.f7.swiper(`#${this.id}`, {
+        var swiperOptions = {
             pagination: `#${this.id} .swiper-pagination`,
             spaceBetween: 0,
             paginationClickable: true,
             nextButton: `#${this.id} .swiper-button-next`,
             prevButton: `#${this.id} .swiper-button-prev`,
             loop: this.loop,
-        })
+            speed: Number(this.speed),
+            autoplayDisableOnInteraction: false
+        }
+
+        if (this.autoplay) swiperOptions.autoplay = this.autoplay
+
+        this.swiper = this.config.f7.swiper(`#${this.id}`, swiperOptions)
 
         if (this.slides.length <= 1) this.showControls = false
     }

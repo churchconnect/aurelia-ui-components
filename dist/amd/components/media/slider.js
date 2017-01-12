@@ -73,7 +73,7 @@ define(['exports', 'aurelia-framework', '../../utils/random', '../../config'], f
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+    var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
 
     var Slider = exports.Slider = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="swiper-container" class.bind="containerClasses" id.bind="id">\n        <div class="swiper-pagination" show.bind="showPagination"></div>\n\n        <div class="swiper-wrapper" ref="slidesWrapper">\n            <slot></slot>\n        </div>\n\n        <div class="swiper-button-prev" show.bind="showControls">\n            <i class="fa fa-chevron-left"></i>\n        </div>\n        <div class="swiper-button-next" show.bind="showControls">\n            <i class="fa fa-chevron-right"></i>\n        </div>\n    </div>\n</template>\n'), _dec3 = (0, _aureliaFramework.inject)(_config.Config), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
         function Slider(config) {
@@ -87,19 +87,29 @@ define(['exports', 'aurelia-framework', '../../utils/random', '../../config'], f
 
             _initDefineProp(this, 'fullWidth', _descriptor4, this);
 
+            _initDefineProp(this, 'autoplay', _descriptor5, this);
+
+            _initDefineProp(this, 'speed', _descriptor6, this);
+
             this.id = 'swiper-' + (0, _random.generateRandomId)();
             this.config = config;
         }
 
         Slider.prototype.attached = function attached() {
-            this.swiper = this.config.f7.swiper('#' + this.id, {
+            var swiperOptions = {
                 pagination: '#' + this.id + ' .swiper-pagination',
                 spaceBetween: 0,
                 paginationClickable: true,
                 nextButton: '#' + this.id + ' .swiper-button-next',
                 prevButton: '#' + this.id + ' .swiper-button-prev',
-                loop: this.loop
-            });
+                loop: this.loop,
+                speed: Number(this.speed),
+                autoplayDisableOnInteraction: false
+            };
+
+            if (this.autoplay) swiperOptions.autoplay = this.autoplay;
+
+            this.swiper = this.config.f7.swiper('#' + this.id, swiperOptions);
 
             if (this.slides.length <= 1) this.showControls = false;
         };
@@ -150,6 +160,16 @@ define(['exports', 'aurelia-framework', '../../utils/random', '../../config'], f
         enumerable: true,
         initializer: function initializer() {
             return false;
+        }
+    }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, 'autoplay', [_aureliaFramework.bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+            return 0;
+        }
+    }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, 'speed', [_aureliaFramework.bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+            return 500;
         }
     })), _class2)) || _class) || _class) || _class);
 });

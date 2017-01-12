@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', '../../utils/random', '../../config'], function (_export, _context) {
     "use strict";
 
-    var inject, inlineView, bindable, containerless, generateRandomId, Config, _createClass, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, Slider;
+    var inject, inlineView, bindable, containerless, generateRandomId, Config, _createClass, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, Slider;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -96,19 +96,29 @@ System.register(['aurelia-framework', '../../utils/random', '../../config'], fun
 
                     _initDefineProp(this, 'fullWidth', _descriptor4, this);
 
+                    _initDefineProp(this, 'autoplay', _descriptor5, this);
+
+                    _initDefineProp(this, 'speed', _descriptor6, this);
+
                     this.id = 'swiper-' + generateRandomId();
                     this.config = config;
                 }
 
                 Slider.prototype.attached = function attached() {
-                    this.swiper = this.config.f7.swiper('#' + this.id, {
+                    var swiperOptions = {
                         pagination: '#' + this.id + ' .swiper-pagination',
                         spaceBetween: 0,
                         paginationClickable: true,
                         nextButton: '#' + this.id + ' .swiper-button-next',
                         prevButton: '#' + this.id + ' .swiper-button-prev',
-                        loop: this.loop
-                    });
+                        loop: this.loop,
+                        speed: Number(this.speed),
+                        autoplayDisableOnInteraction: false
+                    };
+
+                    if (this.autoplay) swiperOptions.autoplay = this.autoplay;
+
+                    this.swiper = this.config.f7.swiper('#' + this.id, swiperOptions);
 
                     if (this.slides.length <= 1) this.showControls = false;
                 };
@@ -159,6 +169,16 @@ System.register(['aurelia-framework', '../../utils/random', '../../config'], fun
                 enumerable: true,
                 initializer: function initializer() {
                     return false;
+                }
+            }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, 'autoplay', [bindable], {
+                enumerable: true,
+                initializer: function initializer() {
+                    return 0;
+                }
+            }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, 'speed', [bindable], {
+                enumerable: true,
+                initializer: function initializer() {
+                    return 500;
                 }
             })), _class2)) || _class) || _class) || _class));
 
