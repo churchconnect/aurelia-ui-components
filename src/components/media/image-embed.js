@@ -5,14 +5,11 @@
  * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
  */
 
-import {inlineView, bindable, containerless} from 'aurelia-framework'
+import {inlineView, bindable} from 'aurelia-framework'
 
-@containerless()
 @inlineView(`
-<template>
-    <div class="image" class.bind="fullWidth ? 'full-width' : ''">
+<template class="image" class.bind="fullWidth ? 'full-width' : ''">
         <img src.bind="source">
-    </div>
 </template>
 `)
 export class ImageEmbed {

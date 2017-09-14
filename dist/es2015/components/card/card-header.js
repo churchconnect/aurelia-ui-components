@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+var _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,20 +43,18 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+import { inlineView, bindable } from 'aurelia-framework';
 
-export let CardHeader = (_dec = containerless(), _dec2 = inlineView(`
-<template>
-    <div class="card-header">
-        <h2 innerHtml.bind="title"></h2>
-        <small innerHtml.bind="subtitle" if.bind="subtitle"></small>
-        <small if.bind="date">
-            <i class="fa fa-clock-o"></i>
-            <span innerHtml.bind="date"></span>
-        </small>
-    </div>
+export let CardHeader = (_dec = inlineView(`
+<template class="card-header">
+    <h2 innerHtml.bind="title"></h2>
+    <small innerHtml.bind="subtitle" if.bind="subtitle"></small>
+    <small if.bind="date">
+        <i class="fa fa-clock-o"></i>
+        <span innerHtml.bind="date"></span>
+    </small>
 </template>
-`), _dec(_class = _dec2(_class = (_class2 = class CardHeader {
+`), _dec(_class = (_class2 = class CardHeader {
     constructor() {
         _initDefineProp(this, 'title', _descriptor, this);
 
@@ -80,4 +78,4 @@ export let CardHeader = (_dec = containerless(), _dec2 = inlineView(`
     initializer: function () {
         return '';
     }
-})), _class2)) || _class) || _class);
+})), _class2)) || _class);

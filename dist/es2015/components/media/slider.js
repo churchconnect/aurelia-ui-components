@@ -79,7 +79,7 @@ export let Slider = (_dec = containerless(), _dec2 = inlineView(`
 
         _initDefineProp(this, 'speed', _descriptor6, this);
 
-        this.id = `swiper-${ generateRandomId() }`;
+        this.id = `swiper-${generateRandomId()}`;
         this.config = config;
     }
 
@@ -103,18 +103,18 @@ export let Slider = (_dec = containerless(), _dec2 = inlineView(`
 
     attached() {
         var swiperOptions = {
-            pagination: `#${ this.id } .swiper-pagination`,
+            pagination: `#${this.id} .swiper-pagination`,
             spaceBetween: 0,
             paginationClickable: true,
-            nextButton: `#${ this.id } .swiper-button-next`,
-            prevButton: `#${ this.id } .swiper-button-prev`,
+            nextButton: `#${this.id} .swiper-button-next`,
+            prevButton: `#${this.id} .swiper-button-prev`,
             loop: this.loop,
             speed: Number(this.speed)
         };
 
         if (this.autoplay) swiperOptions.autoplay = this.autoplay;
 
-        this.swiper = this.config.f7.swiper(`#${ this.id }`, swiperOptions);
+        this.swiper = this.config.f7.swiper(`#${this.id}`, swiperOptions);
 
         if (this.slides.length <= 1) this.showControls = false;
     }

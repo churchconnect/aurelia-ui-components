@@ -59,7 +59,7 @@ export let PageHeader = (_dec = containerless(), _dec2 = inlineView(`
     }
 
     get css() {
-        return this.image ? `background-image: url(${ this.image });` : '';
+        return this.image ? `background-image: url(${this.image});` : '';
     }
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'title', [bindable], {
     enumerable: true,

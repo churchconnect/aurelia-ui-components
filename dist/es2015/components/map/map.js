@@ -61,7 +61,7 @@ export let Map = (_dec = containerless(), _dec2 = inlineView(`
     }
 
     get source() {
-        return `${ GMAPS_EMBED_URL_PREFIX }?key=${ this.apiKey }&q=${ this.location }`;
+        return `${GMAPS_EMBED_URL_PREFIX}?key=${this.apiKey}&q=${this.location}`;
     }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'location', [bindable], {

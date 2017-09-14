@@ -12,7 +12,7 @@ define(['exports', './config'], function (exports, _config) {
     };
 
     function configure(aurelia, configCallback) {
-        var includes = arguments.length <= 2 || arguments[2] === undefined ? [] : arguments[2];
+        var includes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
 
         configCallback(aurelia.container.get(_config.Config));
 

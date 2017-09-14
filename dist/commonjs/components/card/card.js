@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Card = undefined;
 
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
+var _dec, _class, _desc, _value, _class2, _descriptor;
 
 var _aureliaFramework = require('aurelia-framework');
 
@@ -54,11 +54,11 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var Card = exports.Card = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="card" class.bind="fullHeight ? \'full-height\' : \'\'">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function Card() {
+var Card = exports.Card = (_dec = (0, _aureliaFramework.inlineView)('\n<template class="card" class.bind="fullHeight ? \'full-height\' : \'\'">\n    <slot></slot>\n</template>\n'), _dec(_class = (_class2 = function Card() {
     _classCallCheck(this, Card);
 
     _initDefineProp(this, 'fullHeight', _descriptor, this);
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'fullHeight', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class) || _class);
+})), _class2)) || _class);

@@ -5,14 +5,11 @@
  * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
  */
 
-import {inlineView, bindable, containerless} from 'aurelia-framework'
+import {inlineView, bindable} from 'aurelia-framework'
 
-@containerless()
 @inlineView(`
-<template>
-    <div class="card" class.bind="fullHeight ? 'full-height' : ''">
-        <slot></slot>
-    </div>
+<template class="card" class.bind="fullHeight ? 'full-height' : ''">
+    <slot></slot>
 </template>
 `)
 export class Card {

@@ -57,7 +57,7 @@ export let ItemIcon = (_dec = containerless(), _dec2 = inlineView(`
     }
 
     get iconClass() {
-        return `fa fa-${ this.icon }`;
+        return `fa fa-${this.icon}`;
     }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'icon', [bindable], {

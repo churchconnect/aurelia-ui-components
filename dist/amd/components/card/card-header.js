@@ -55,9 +55,9 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+    var _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
-    var CardHeader = exports.CardHeader = (_dec = (0, _aureliaFramework.containerless)(), _dec2 = (0, _aureliaFramework.inlineView)('\n<template>\n    <div class="card-header">\n        <h2 innerHtml.bind="title"></h2>\n        <small innerHtml.bind="subtitle" if.bind="subtitle"></small>\n        <small if.bind="date">\n            <i class="fa fa-clock-o"></i>\n            <span innerHtml.bind="date"></span>\n        </small>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function CardHeader() {
+    var CardHeader = exports.CardHeader = (_dec = (0, _aureliaFramework.inlineView)('\n<template class="card-header">\n    <h2 innerHtml.bind="title"></h2>\n    <small innerHtml.bind="subtitle" if.bind="subtitle"></small>\n    <small if.bind="date">\n        <i class="fa fa-clock-o"></i>\n        <span innerHtml.bind="date"></span>\n    </small>\n</template>\n'), _dec(_class = (_class2 = function CardHeader() {
         _classCallCheck(this, CardHeader);
 
         _initDefineProp(this, 'title', _descriptor, this);
@@ -80,5 +80,5 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         initializer: function initializer() {
             return '';
         }
-    })), _class2)) || _class) || _class);
+    })), _class2)) || _class);
 });

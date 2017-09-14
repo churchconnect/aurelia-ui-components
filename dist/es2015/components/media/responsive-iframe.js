@@ -33,7 +33,7 @@ export let ResponsiveIframe = (_dec = customAttribute('responsive-iframe'), _dec
 
     adjustDimensions() {
         this.element.width = '100%';
-        this.element.height = `${ this.element.offsetWidth * this.aspectRatio }px`;
+        this.element.height = `${this.element.offsetWidth * this.aspectRatio}px`;
     }
 
 }) || _class) || _class);

@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inlineView, bindable, containerless, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, Card;
+    var inlineView, bindable, _dec, _class, _desc, _value, _class2, _descriptor, Card;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -58,17 +58,16 @@ System.register(['aurelia-framework'], function (_export, _context) {
         setters: [function (_aureliaFramework) {
             inlineView = _aureliaFramework.inlineView;
             bindable = _aureliaFramework.bindable;
-            containerless = _aureliaFramework.containerless;
         }],
         execute: function () {
-            _export('Card', Card = (_dec = containerless(), _dec2 = inlineView('\n<template>\n    <div class="card" class.bind="fullHeight ? \'full-height\' : \'\'">\n        <slot></slot>\n    </div>\n</template>\n'), _dec(_class = _dec2(_class = (_class2 = function Card() {
+            _export('Card', Card = (_dec = inlineView('\n<template class="card" class.bind="fullHeight ? \'full-height\' : \'\'">\n    <slot></slot>\n</template>\n'), _dec(_class = (_class2 = function Card() {
                 _classCallCheck(this, Card);
 
                 _initDefineProp(this, 'fullHeight', _descriptor, this);
             }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'fullHeight', [bindable], {
                 enumerable: true,
                 initializer: null
-            })), _class2)) || _class) || _class));
+            })), _class2)) || _class));
 
             _export('Card', Card);
         }

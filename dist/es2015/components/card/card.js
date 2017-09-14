@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
+var _dec, _class, _desc, _value, _class2, _descriptor;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,15 +43,13 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inlineView, bindable, containerless } from 'aurelia-framework';
+import { inlineView, bindable } from 'aurelia-framework';
 
-export let Card = (_dec = containerless(), _dec2 = inlineView(`
-<template>
-    <div class="card" class.bind="fullHeight ? 'full-height' : ''">
-        <slot></slot>
-    </div>
+export let Card = (_dec = inlineView(`
+<template class="card" class.bind="fullHeight ? 'full-height' : ''">
+    <slot></slot>
 </template>
-`), _dec(_class = _dec2(_class = (_class2 = class Card {
+`), _dec(_class = (_class2 = class Card {
     constructor() {
         _initDefineProp(this, 'fullHeight', _descriptor, this);
     }
@@ -59,4 +57,4 @@ export let Card = (_dec = containerless(), _dec2 = inlineView(`
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'fullHeight', [bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class) || _class);
+})), _class2)) || _class);

@@ -83,7 +83,7 @@ export let Slide = (_dec = containerless(), _dec2 = inlineView(`
         if (!this.aspectRatio) return;
 
         this.element.style.width = '100%';
-        this.element.style.height = `${ window.innerWidth * this.aspectRatio }px`;
+        this.element.style.height = `${window.innerWidth * this.aspectRatio}px`;
     }
 
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'aspectRatio', [bindable], {

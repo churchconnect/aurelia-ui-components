@@ -5,19 +5,16 @@
  * written permission of SharpTop Software, LLC. For permission requests, write to the author at info@sharptop.co.
  */
 
-import {inlineView, bindable, containerless} from 'aurelia-framework'
+import {inlineView, bindable} from 'aurelia-framework'
 
-@containerless()
 @inlineView(`
-<template>
-    <div class="card-header">
-        <h2 innerHtml.bind="title"></h2>
-        <small innerHtml.bind="subtitle" if.bind="subtitle"></small>
-        <small if.bind="date">
-            <i class="fa fa-clock-o"></i>
-            <span innerHtml.bind="date"></span>
-        </small>
-    </div>
+<template class="card-header">
+    <h2 innerHtml.bind="title"></h2>
+    <small innerHtml.bind="subtitle" if.bind="subtitle"></small>
+    <small if.bind="date">
+        <i class="fa fa-clock-o"></i>
+        <span innerHtml.bind="date"></span>
+    </small>
 </template>
 `)
 export class CardHeader {
